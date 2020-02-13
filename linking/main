@@ -1,0 +1,20 @@
+using System;
+using static System.Console;
+class main{
+	static int Main(){
+	System.Console.Write("Hello from system\n ");
+	Console.Write("Hello from console\n");
+	Write("Hello Write \n");
+	world.print()
+	
+	return 0;
+	}
+	
+} 
+
+
+class world{
+	static void print(){
+	Write("Hello from world\n");
+	}
+}

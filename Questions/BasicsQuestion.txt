@@ -1,0 +1,46 @@
+1.What is the mcs option to turn off all warnings?
+-warn:0
+
+2. What is the mcs option to turn off informational warnings?
+-warn:3
+
+3.Rewrite this piece of code, x=(a>b?a:b), using the if statement.
+if(a>b)
+	{x = a;}
+else
+	{x = b;}
+
+4. If you need mathematical functions from, say, cmath.dll library, how do you link your program with the library?
+	In the makefile:
+	Give the flag -r:cmath.dll
+
+5. What will the following piece of code print?
+int i=0;
+Write("{0}\n",i);
+Write("{0}\n",i++);
+Write("{0}\n",++i);
+Explain.
+
+The output print will be:
+0
+0
+2
+
+First it will write i, then it will write i and increment i once, and in the last line
+it will increment before writing i, thus i=2 before the last 'Write'-command.
+
+6. Rewrite the loop while(condition)body using the for loop.
+for(init; condition; i++) {body}
+This doesn't really make sense as the two scenarious are not comparable.
+
+
+7. Rewrite the loop for(init;cond;inc)body using the while loop.
+init;
+while(cond)
+ {body;
+ inc;}
+
+8. Rewrite the loop do body while(condition); using the for loop.
+body;
+for(condition) {body;}
+Same 'problem' as in 6).

@@ -1,0 +1,4 @@
+hello form system
+hello from console
+hello from write
+hello from world

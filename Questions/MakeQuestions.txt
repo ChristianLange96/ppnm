@@ -1,0 +1,25 @@
+1. What is the Main method?
+	The Main method calls the makefile in which it's directed what to do first, 
+	what to use for that specific command. It makes sure that all the files 
+	needed exist and are compiled before use.
+
+2. What is source code, bytecode and executable code?
+	Source code: The code that I write in the C#-language. 
+	Bytecode: When the source code is compiled a bytecode-file is created.
+	Executable: Software in a form that can be run directly on the computer.
+
+3. How can you compile a C#-program which is wholly contained in one file,
+   say hello.cs, into an executable bytecode?
+	I call: mcs hello.cs
+
+4. How do you run the resulting executable code with the mono runtime-system?
+	I call: mono hello.exe
+
+5. How can you compile the C# source code in the file cmath.cs into a bytecode libray
+   cmath.dll?
+	Not sure.
+
+6. How can you link a bytecode library, say cmath.dll, when compiling your
+   file with the Main method, say main.cs?
+	I do that through the Makefile. I specify which .exe to run first, so by 
+	default, it looks for the Main-method in that .exe. 
