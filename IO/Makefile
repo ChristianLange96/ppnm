@@ -10,10 +10,10 @@ outstdin.txt : readstdin.exe input.txt
 	mono $< < $(word 2,$^) > $@
 
 readstdin.exe : readstdin.cs
-	CSC $> -out:$@
+	CSC $< -out:$@
 
 input.txt: Makefile
-	/bin/echo -e '0.5\n2.5\n3.5' > $@
+	echo '0.5\n2.5\n3.5' > $@
 
 clean:
 	$(RM) *.exe out*
