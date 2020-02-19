@@ -17,7 +17,7 @@
 
 5. How can you compile the C# source code in the file cmath.cs into a bytecode libray
    cmath.dll?
-	Not sure.
+	The same as in 3), the difference is that cmath.cs does not have Main-method.
 
 6. How can you link a bytecode library, say cmath.dll, when compiling your
    file with the Main method, say main.cs?
