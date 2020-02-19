@@ -1,4 +1,4 @@
-all: outcmdline.txt outstdin.txt
+all: outcmdline.txt outstdin.txt read_file.exe
 
 outcmdline.txt : readcmdline.exe
 	mono readcmdline.exe 1 2 3 4 5 > $@
@@ -14,6 +14,9 @@ readstdin.exe : readstdin.cs
 
 input.txt: Makefile
 	echo '0.5\n2.5\n3.5' > $@
+
+read_file.exe : read_file.cs
+	CSC $< -out:$@
 
 clean:
 	$(RM) *.exe out*
