@@ -1,1 +1,4 @@
-Result from approx: False 
+Approx(1+abserr,1)=True 
+Approx(1+2*abserr,1)=False 
+Approx(1e9*(1+relerr),1e9)=True 
+Approx(1e9*(1+2*relerr),1e9)=False 

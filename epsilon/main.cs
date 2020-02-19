@@ -74,8 +74,17 @@ class main{
 		// I don't think it converges to the analytical convergent 
 		// number though. 
 */
-		bool app = Approx(1,2);
-		Write("Result from approx: {0} \n",app);
+		double abserr=1e-6;
+		double relerr=1e-6;
+		bool app;
+		app = Approx(1+abserr,1,abserr,relerr);
+		Write("Approx(1+abserr,1)={0} \n",app);
+		app = Approx(1+2*abserr,1,abserr,relerr);
+		Write("Approx(1+2*abserr,1)={0} \n",app);
+		app = Approx(1e9*(1+relerr),1e9,abserr,relerr);
+		Write("Approx(1e9*(1+relerr),1e9)={0} \n",app);
+		app = Approx(1e9*(1+2*relerr),1e9,abserr,relerr);
+		Write("Approx(1e9*(1+2*relerr),1e9)={0} \n",app);
 
 	return 0;
 }
