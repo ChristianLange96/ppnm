@@ -150,10 +150,10 @@
 		L536.2,197.8 L539.4,197.8 L542.5,197.8 L545.6,197.8 L548.7,197.8 L551.9,197.8 L555.0,197.8 L558.2,197.8
 		L561.3,197.8 L564.4,197.8  '/></g>
 	</g>
-	<g id="gnuplot_plot_2" ><title>errfun tab</title>
+	<g id="gnuplot_plot_2" ><title>errfun tabulated values</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(498.9,399.3)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >errfun tab</tspan></text>
+		<text><tspan font-family="Arial" >errfun tabulated values</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">

@@ -9,5 +9,5 @@ set yzeroaxis
 set title "Error function"
 plot [-4:6][-5:5] \
 	"out.errfun.txt" with lines title "errfun"\
-	, "errfuntab.txt" with points pt 7 title"errfun tab"	
+	, "errfuntab.txt" with points pt 7 title"errfun tabulated values"	
 	
