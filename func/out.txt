@@ -1,0 +1,20 @@
+Integral of ln(x)/sqrt(x) from 0 to 1 is = -3,99999969851602
+Integral of Exp(-Pow(x,2)) from -inf to inf is = 1,77245411516459, sqrt(pi) = 1,77245385090552
+Integral of Pow((Log(1/x),0,50) from 0 to 1 is = 0,886228, while gamma(0,50 + 1) = 0,886227
+Integral of Pow((Log(1/x),1,00) from 0 to 1 is = 1,000003, while gamma(1,00 + 1) = 1,000000
+Integral of Pow((Log(1/x),1,50) from 0 to 1 is = 1,329341, while gamma(1,50 + 1) = 1,329340
+Integral of Pow((Log(1/x),2,00) from 0 to 1 is = 2,000002, while gamma(2,00 + 1) = 2,000000
+Integral of Pow((Log(1/x),2,50) from 0 to 1 is = 3,323351, while gamma(2,50 + 1) = 3,323350
+Integral of Pow((Log(1/x),3,00) from 0 to 1 is = 6,000001, while gamma(3,00 + 1) = 6,000001
+Integral of Pow((Log(1/x),3,50) from 0 to 1 is = 11,631730, while gamma(3,50 + 1) = 11,631723
+Integral of Pow((Log(1/x),4,00) from 0 to 1 is = 24,000001, while gamma(4,00 + 1) = 24,000004
+Integral of Pow((Log(1/x),4,50) from 0 to 1 is = 52,342777, while gamma(4,50 + 1) = 52,342756
+Integral of Pow((Log(1/x),5,00) from 0 to 1 is = 120,000001, while gamma(5,00 + 1) = 120,000022
+Integral of Pow((Log(1/x),5,50) from 0 to 1 is = 287,885278, while gamma(5,50 + 1) = 287,885156
+Integral of Pow((Log(1/x),6,00) from 0 to 1 is = 720,000000, while gamma(6,00 + 1) = 720,000129
+Integral of Pow((Log(1/x),6,50) from 0 to 1 is = 1871,254305, while gamma(6,50 + 1) = 1871,253516
+Integral of Pow((Log(1/x),7,00) from 0 to 1 is = 5040,000000, while gamma(7,00 + 1) = 5040,000903
+Integral of Pow((Log(1/x),7,50) from 0 to 1 is = 14034,407293, while gamma(7,50 + 1) = 14034,401369
+Integral of Pow((Log(1/x),8,00) from 0 to 1 is = 40320,000000, while gamma(8,00 + 1) = 40320,007225
+Integral of Pow((Log(1/x),8,50) from 0 to 1 is = 119292,461994, while gamma(8,50 + 1) = 119292,411637
+Integral of Pow(x,3)/(Exp(x)-1) from 0 to inf is = 6,493937, while Pow(PI,4)/15 = 6,493939

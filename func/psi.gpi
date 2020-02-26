@@ -1,0 +1,11 @@
+set term svg background rgb "white"
+set out "Psi.svg"
+set ylabel "E(a)"
+set xlabel "a"
+set key bottom right
+set tics out
+set xzeroaxis
+set yzeroaxis
+
+plot [0:3][0:3] \
+	"out.psi.txt" with lines title ""
