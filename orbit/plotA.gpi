@@ -1,5 +1,5 @@
 set term svg background rgb "white"
-set out "plotA.svg"
+set out "PlotA.svg"
 set tics out
 set key out
 plot "out.A.txt" u 1:2 t "Nummeric, A" w l \
