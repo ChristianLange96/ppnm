@@ -36,4 +36,4 @@ matlib.dll: ../matlib/matrix/vector.cs ../matlib/ode/ode.cs
 	mcs -target:library -out:$@ $^
 
 clean:
-	rm -f *.dll *.exe log* out*
+	rm -f *.dll *.exe log* out* *.svg
