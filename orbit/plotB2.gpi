@@ -1,0 +1,5 @@
+set term svg background rgb "white"
+set out "PlotB2.svg"
+set tics out
+set key out
+plot "out.B2.txt" using (1/$2)*sin($1):(1/$2)*cos($1) with lines notitle 
