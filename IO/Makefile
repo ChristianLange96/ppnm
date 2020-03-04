@@ -19,4 +19,4 @@ read_file.exe : read_file.cs
 	CSC $< -out:$@
 
 clean:
-	$(RM) *.exe out*
+	$(RM) *.exe out* *.txt

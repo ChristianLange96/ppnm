@@ -12,10 +12,10 @@ PlotB3.svg : plotB3.gpi out.B3.txt
 	gnuplot $< 
 
 out.B2.txt : mainB.exe Makefile
-	mono $< udiff0=0,5 |sed -e "s/,/./g"  1> $@ 
+	mono $< udiff0=0.5 |sed -e "s/,/./g"  1> $@ 
 
 out.B3.txt : mainB.exe Makefile
-	mono $< u0=1 udiff0=0,5 eps=0,03     2>log |sed -e "s/,/./g"  1> $@ 
+	mono $< u0=1 udiff0=0.5 eps=0.03     2>log |sed -e "s/,/./g"  1> $@ 
 
 PlotA.svg: plotA.gpi out.A.txt
 	gnuplot $<
