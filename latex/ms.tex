@@ -1,0 +1,48 @@
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\title{An example of using \LaTeX \ and Gnuplot: the Euler Spiral}
+\author{Christian Lange}
+
+\begin{document}
+\maketitle
+
+An Euler spiral is a curve whose curvature changes linearly with its curve length 
+(the curvature of a circular curve is equal to the reciprocal of the radius).
+Euler spirals are also commonly referred to as 'spiros', 'clothoids', or 'Cornu' spirals.
+
+Euler spirals have applications to diffraction computations. They are also widely used as transition curves in
+railroad engineering/highway engineering for connecting and transitioning the geometry between a tangentand a circular curve.
+A similar application is also found in photonic integrated circuits.
+The principle of linear variation of the curvature of the transition curve between a tangent and 
+a circular curve defines the geometry of the Euler spiral:\\
+
+
+\begin{itemize}
+ \item Its curvature begins with zero at the straight section (the tangent) and increases linearly with its curve length.
+ \item Where the Euler spiral meets the circular curve, its curvature becomes equal to that of the latter.
+\end{itemize}
+
+If $a = 1$, which is the case for normalized Euler curve, then the Cartesian coordinates
+are given by Fresnel integrals (or Euler integrals):
+\begin{align}
+C(L) &= \int_{0}^{L} \cos(s^2) ds\\
+S(L) &= \int_{0}^{L} \sin(s^2) ds 
+\end{align}
+This is found at: \url{https://en.wikipedia.org/wiki/Euler_spiral}.\\
+
+In fig. \ref{fig:eulerSpiral} C(L) is plotted as the y-coordinate, and S(L) is plotted as the x-coordinate. 
+Here $L\in [-10,10]$ and with increments of $dL = 0.05$. 
+
+
+
+
+\begin{figure}
+\caption{Illustration of the Euler Spiral}
+\input{plot-eulerSpiral.tex}
+\label{fig:eulerSpiral}
+\end{figure}
+
+\end{document}
