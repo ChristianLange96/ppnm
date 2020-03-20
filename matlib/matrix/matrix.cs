@@ -174,12 +174,11 @@ public matrix transpose(){
 	return c;
 	}
 
-public void print(){print("");}
-public void print(string s){
+public void print(string s="",string format="{0,10:g3} "){
 	System.Console.WriteLine(s);
 	for(int ir=0;ir<this.size1;ir++){
 	for(int ic=0;ic<this.size2;ic++)
-		System.Console.Write("{0,9:F3} ",this[ir,ic]);
+		System.Console.Write(format,this[ir,ic]);
 		System.Console.WriteLine();
 		}
 	}
@@ -199,6 +198,4 @@ public bool equals(matrix B,double eps=1e-6){
 				return false;
 	return true;
 }
-
-}//matrix
-
+}

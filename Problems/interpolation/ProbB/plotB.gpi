@@ -1,0 +1,20 @@
+set term svg background rgb "white"
+set out "PlotB.svg"
+set multiplot layout 2,2
+set tics out
+
+
+
+set title "Spline"
+plot "out-xydata.txt"  with points pointtype 7 title "Points" \
+, "out-qsplinedata.txt"  title "cspline" w l
+
+
+set title "Integration"
+plot "out-qintegration.txt" u 1:3 t "Excact integral" w l \
+,"out-qintegration.txt" u 1:2 t "Spline integral" w l
+
+
+set title "Derivative"
+plot "out-qderivative.txt" u 1:3 t "-Excact derivative" w l \
+, "out-qderivative.txt" u 1:2 t "Splined derivative" w l

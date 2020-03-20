@@ -8,6 +8,7 @@ public class vector{
 		set{data[i] = value;}}
         // Constructor
 	public vector(int n){ data = new double[n];}
+	public vector(double n){ data = new double[n];}
 
 	public void print(string s = ""){
 		System.Console.Write(s);
@@ -30,8 +31,5 @@ public class vector{
 	public static vector operator*(vector v, double a){
 		return a*v;
 	}
-
-
-
 
 }
