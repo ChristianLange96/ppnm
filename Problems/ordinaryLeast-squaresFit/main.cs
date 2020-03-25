@@ -4,7 +4,7 @@ using System.IO;
 
 class main{
     public static int Main(){
-
+        StreamWriter outB = new StreamWriter("B.txt", append:false);
         // Creating data
         var t = new vector(new double[] {1,2,3,4,6,9,10,13,15});
         var y = new vector(new double[] {117, 100, 88, 72, 53, 29.5, 25.2, 15.2, 11.1});
@@ -24,22 +24,21 @@ class main{
         var (c,S) = ols_fitter.lsfit(t,lny,lndy,f);
 
 
-        Console.Error.WriteLine($"Calculated coefficients:");
+        outB.WriteLine($"Calculated coefficients:");
         for(int i = 0; i < c.size; i++){ 
-        Console.Error.WriteLine($"c[{i}] = {c[i]:f5}");
+        outB.WriteLine($"c[{i}] = {c[i]:f5}");
         }
-        Console.Error.WriteLine($@"So \lambda = {-c[1]:f5} (t_1/2 = {-Log(2)/c[1]}), litterature value for 
-        today is \lambda = 0.191 (t_1/2 = 3.6319), so af deviation of ~10%.");
-
-        Console.Error.WriteLine("Covariance matrix S:");
+        outB.WriteLine("Covariance matrix S:");
         for(int i = 0; i < S.size1; i++){ 
             for(int j = 0; j< S.size2; j++ ){
-                Console.Error.WriteLine($"S[{i},{j}] = {S[i,j]:f5}");
+                outB.WriteLine($"S[{i},{j}] = {S[i,j]:f5}");
             }
         }
-        Console.Error.WriteLine("The uncertainty of the half life (t_{1/2} = ln(2)/lambda):");
-        Console.Error.WriteLine($"delta_t_(1/2) = ln(2)/(lamda^2) * deltaLambda = {Log(2)/Pow(c[1],2) * Sqrt(S[1,1]):f5}");
-        Console.Error.WriteLine("The uncertainty does thus not reach todays litterature value.");
+
+        outB.WriteLine($"So lambda = {-c[1]:f5}, dlambda = {Sqrt(S[1,1]):f5}");
+
+        outB.WriteLine($"Half-life is = {Log(2)/c[1]:f1} pm {Log(2)/Pow(c[1],2) * Sqrt(S[1,1]):f1}");
+
 
         // Sending data to output
         StreamWriter outData = new StreamWriter("outData.txt", append:false);
@@ -63,6 +62,7 @@ class main{
         }
         outData.Close();
         outFitData.Close();
+        outB.Close();
 
 
 

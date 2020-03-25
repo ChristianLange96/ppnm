@@ -1,9 +1,13 @@
-all: plotA.svg
+all: plotA.svg B.txt plotC.svg
 
-plotA.svg : plotA.gpi outFitData.txt
+
+plotC.svg : plotC.gpi outFitData.txt outData.txt
+	gnuplot plotC.gpi
+
+plotA.svg : plotA.gpi outFitData.txt outData.txt
 	gnuplot plotA.gpi
 
-outFitData.txt : main.exe
+outFitData.txt outData B.txt: main.exe
 	mono $< >$@
 
 main.exe : main.cs matlib.dll

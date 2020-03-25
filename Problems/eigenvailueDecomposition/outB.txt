@@ -1,0 +1,31 @@
+Part B
+Random matrix M = 
+      1.58     -0.273       1.56     -0.382      -1.17 
+    -0.273       1.71      -1.39       1.31     -0.145 
+      1.56      -1.39      -1.47     -0.559      -0.18 
+    -0.382       1.31     -0.559       1.43       1.43 
+     -1.17     -0.145      -0.18       1.43       2.08 
+
+All eigenvalues and eigenvectors calculated with method implemented in part A:
+All eigenvalues:-2.475 -0.450 1.430 2.317 4.511 
+Corresponding eigenvectors:
+     0.341      0.235      0.748      0.233     -0.464 
+    -0.266      0.473   -0.00951      0.739      0.399 
+      -0.9   -0.00325      0.291     -0.168     -0.278 
+   -0.0246     -0.675        0.5      0.148      0.521 
+     0.051      0.515      0.325     -0.591      0.526 
+
+Now using method implimented in part B only 3 eigenvalues and eigenvectors are calculated:
+3 lowest eigenvalues:-2.475 -0.450 1.430 
+Corresponding eigenvectors
+     0.341      0.235      0.748 
+    -0.266      0.473   -0.00951 
+      -0.9   -0.00325      0.291 
+   -0.0246     -0.675        0.5 
+     0.051      0.515      0.325 
+To check, that only the 3 first rows have been calculated, M =  
+      1.58   3.16e-09  -1.61e-09   3.05e-09  -1.36e-09 
+    -0.273       1.71  -5.19e-11   1.46e-10   9.61e-12 
+      1.56      -1.39      -1.47    2.5e-09          0 
+    -0.382       1.31     -0.559       1.43       1.08 
+     -1.17     -0.145      -0.18       1.43       2.08 

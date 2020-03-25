@@ -1,5 +1,6 @@
 // (C) 2020 Dmitri Fedorov; License: GNU GPL v3+; no warranty.
 using System;
+using static System.Math;
 public partial class matrix{
 
 public readonly int size1, size2;
@@ -101,6 +102,14 @@ public static vector operator* (matrix a, vector v){
 	return u;
 	}
 
+public static vector operator% (matrix a, vector v){
+	var u = new vector(a.size2);
+	for(int k=0;k<a.size1;k++)
+	for(int i=0;i<a.size2;i++)
+		u[i]+=a[k,i]*v[k];
+	return u;
+	}
+
 public matrix(vector e) : this(e.size,e.size) { for(int i=0;i<e.size;i++)this[i,i]=e[i]; }
 
 public void set(int r, int c, double value){ this[r,c]=value; }
@@ -174,6 +183,12 @@ public matrix transpose(){
 	return c;
 	}
 
+public static void scale(matrix M,double x){
+	for(int j=0;j<M.size2;j++)
+	for(int i=0;i<M.size1;i++)
+		M[i,j]*=x;
+	}
+
 public void print(string s="",string format="{0,10:g3} "){
 	System.Console.WriteLine(s);
 	for(int ir=0;ir<this.size1;ir++){
@@ -183,19 +198,20 @@ public void print(string s="",string format="{0,10:g3} "){
 		}
 	}
 
-public static bool double_equal(double a, double b, double eps=1e-6){
-	if(System.Math.Abs(a-b)<eps)return true;
-	if(Math.Abs(a-b)/(Math.Abs(a)+Math.Abs(b)) < eps/2)return true;
+public static bool approx(double a, double b, double acc=1e-6, double eps=1e-6){
+	if(Abs(a-b)<acc)return true;
+	if(Abs(a-b)/Max(Abs(a),Abs(b)) < eps)return true;
 	return false;
 }
 
-public bool equals(matrix B,double eps=1e-6){
+public bool approx(matrix B,double acc=1e-6, double eps=1e-6){
 	if(this.size1!=B.size1)return false;
 	if(this.size2!=B.size2)return false;
 	for(int i=0;i<size1;i++)
 		for(int j=0;j<size2;j++)
-			if(!double_equal(this[i,j],B[i,j],eps))
+			if(!approx(this[i,j],B[i,j],acc,eps))
 				return false;
 	return true;
 }
-}
+
+}//matrix
