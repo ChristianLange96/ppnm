@@ -14,7 +14,9 @@ public class mainA1{
         }
         matrix M2 = M.copy();
         M.print("Random matrix M = ");
-        var (D,V,sweeps) = jac_diag.cyclic_sweep(M);
+        vector D = new vector(n);
+        matrix V = new matrix(n,n);
+        int sweeps = jac_diag.cyclic_sweep(M, V, D);
         matrix temp2 = V.T*M2*V;
         Console.WriteLine($"Total number of sweeps = {sweeps}");
         temp2.print("V.T*M*V = ");

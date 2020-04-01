@@ -1,7 +1,13 @@
-all: outA1.txt plotA2.svg outB.txt
+all: outA1.txt plotA2.svg plotB1.svg plotB3.svg
 
-outB.txt : mainB.exe
-	mono $< >$@
+plotB3.svg : plotB3.gpi outB3.data
+	gnuplot $< >$@
+
+plotB1.svg : plotB1.gpi outB1.data
+	gnuplot $< >$@
+
+outB.txt outB1.data outB3.data : mainB.exe
+	mono $< >outB.txt
 
 plotA2.svg : outA2.data plotA2.gpi 
 	gnuplot plotA2.gpi

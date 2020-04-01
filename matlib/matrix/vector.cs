@@ -32,6 +32,13 @@ public void print(string s=""){
 	System.Console.Write("\n");
 }
 
+public void print(int n, string s=""){		// Only prints n first values
+	System.Console.Write(s);
+	for(int i=0;i<n;i++) System.Console.Write("{0:f3} ",this[i]);
+	System.Console.Write("\n");
+}
+
+
 public static vector operator+(vector v, vector u){
 	vector r=new vector(v.size);
 	for(int i=0;i<r.size;i++)r[i]=v[i]+u[i];

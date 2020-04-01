@@ -18,8 +18,9 @@ public class mainA2{
         matrix.set(H,n-1,n-1,-2);
         matrix.scale(H,-1/s/s);
         
-
-        var (D,V,sweeps) = jac_diag.cyclic_sweep(H);
+        vector D = new vector(n);
+        matrix V = new matrix(n,n);
+        int sweeps = jac_diag.cyclic_sweep(H, V, D);
         for (int k=0; k < n/3; k++){
             double exact = PI*PI*(k+1)*(k+1);
             double calculated = D[k];
@@ -29,13 +30,15 @@ public class mainA2{
         for(int k=0;k<4;k++){
             outData.WriteLine($"{0} {0}");
             for(int i=0;i<n;i++){
-                //Error.WriteLine($"(i,k) = ({i},{k}), V.size = {V.size1}, V[i,k] = {V[i,k]}");
-                outData.WriteLine($"{(i+1.0)/(n+1.0)} {V[i,k]/Sqrt(s)}");
+                double factor = Sign(V[0,k]);
+                outData.WriteLine($"{(i+1.0)/(n+1.0)} {V[i,k]*factor/Sqrt(s)}");
             }
             outData.WriteLine($"{1} {0}");
+            outData.WriteLine("");
          }
 
-
+        outData.Close();
+        eigenenergies.Close();
 
         return 0;
     }
