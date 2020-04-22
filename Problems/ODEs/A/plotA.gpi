@@ -1,7 +1,7 @@
 	set term svg size 640,480 background "white" font "times,14"
 	set out "plotA.svg"
-	set key left
-	set title "Solution from ODE-integrator"
+	set key center top
+	set title "Solution from ODE-integrator: dy_0/dt = y1, dy_1/dt = -y_0"
 	set xlabel "t"
 	set ylabel "y"
 	plot "outA.data" u 1:2 t "y_0" \

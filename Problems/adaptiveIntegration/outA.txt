@@ -1,0 +1,9 @@
+Part A
+
+Calculating integral of Sqrt(x) dx from 0 to 1
+The result is 0.66667
+The analytical result is 0.66667, so it matches perfectly.
+
+Calculating integral of 4* Sqrt(1-x^2) dx from 0 to 1
+The result is 3.14159
+The analytical result is 3.14159, so this also matches perfectly.

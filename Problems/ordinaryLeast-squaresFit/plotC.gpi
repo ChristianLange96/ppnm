@@ -4,12 +4,13 @@ set out "PlotC.svg"
 set xlabel "t (days)"
 set ylabel "Activity (rel. units)"
 set tics out
-
-
-
-
+set log y
+set yrange [10:1000]
 set title "Activity of ThX (224Ra)"
 plot "outData.txt" with yerrorbars t "Data" \
-, "outFitData.txt" u 1:2 t "{F_c(t)}" w l \
-, "outFitData.txt" u 1:3 w l t "{F_{c + \Delta t}(t)}" \
-, "outFitData.txt" u 1:4 w l t "{F_{c - \Delta t}(t)}"
+, "outFitData.txt" u 1:2 t "{Best fit}" w l \
+, "outFitData.txt" u 1:3 w l t "c0 + dc0" \
+, "outFitData.txt" u 1:4 w l t "c0 - dc0" \
+, "outFitData.txt" u 1:5 w l t "c1 + dc1" \
+, "outFitData.txt" u 1:6 w l t "c1 - dc1"
+

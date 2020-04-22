@@ -1,0 +1,22 @@
+Part C
+
+Calculating integral of exp(-x^2) from -inf to inf
+The result is 1.7724538133, with 1272 recursive calls to the function.
+The estimated error is 0.0000055842
+The the analytical result is Sqrt(PI) = 1.77245385090552, so it's pretty close.
+Comparing to 'o8av':
+The result from 'o8av' is 1.7724541152, with 128 recursive calls to the function.
+
+Calculating integral of 1/(1+x^2) from 0 to inf
+The result is 1.5707963312, with 344 recursive calls to the function.
+The estimated error is 0.0000050834
+The the analytical result is PI/2 = 1.5707963267949, so it's pretty close.
+Comparing to 'o8av':
+The result from 'o8av' is 1.5707963809, with 48 recursive calls to the function.
+
+Calculating integral of exp(-x^2) from -inf to 0
+The result is 0.8862083787, with 476 recursive calls to the function.
+The estimated error is 0.0000047118
+The the analytical result is Sqrt(PI)/2 = 0.886226925452758, so it's pretty close.
+Comparing to 'o8av':
+The result from 'o8av' is 0.8862270576, with 64 recursive calls to the function.

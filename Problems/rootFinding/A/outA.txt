@@ -1,0 +1,8 @@
+Finding roots for x^2 - 4
+Newton's method has found the root(s):
+2.000 
+Analytical solution is 2.000.
+
+Finding the minimum for Rosenbrock's valley function
+1.000 1.000 
+The analytical minimum is at (1,1)

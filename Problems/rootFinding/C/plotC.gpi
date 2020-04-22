@@ -1,0 +1,24 @@
+	set term svg size 640,480 background "white" font "times,14"
+	set out "plotC.svg"
+	set key center top
+    set multiplot layout 1,2
+
+	set xlabel "r (a)"
+	set ylabel "F_{\epsilon} (r)"
+    set title "Convergence with r -> \inf = 0"
+	plot "outC1.data" index 0 u 1:2 w l t "r_{max} = 2" \
+    ,"outC1.data" index 1 u 1:2 w l t "r_{max} = 4" \
+    ,"outC1.data" index 2 u 1:2 w l t "r_{max} = 6" \
+    ,"outC1.data" index 3 u 1:2 w l t "r_{max} = 8" \
+    ,"outC1.data" index 4 u 1:2 w l t "r_{max} = 10" \
+    ,"outC1.data" index 5 u 1:2 w l lt 2 dashtype 2 t "Analytic"
+    
+
+    set title "Convergence with r -> \inf = r * exp(-k * r)"
+	plot "outC2.data" index 0 u 1:2 w l t "r_{max} = 2" \
+    ,"outC2.data" index 1 u 1:2 w l t "r_{max} = 4" \
+    ,"outC2.data" index 2 u 1:2 w l t "r_{max} = 6" \
+    ,"outC2.data" index 3 u 1:2 w l t "r_{max} = 8" \
+    ,"outC2.data" index 4 u 1:2 w l t "r_{max} = 10" \
+    ,"outC2.data" index 5 u 1:2 w l lt 2 dashtype 2 t "Analytic" 
+    

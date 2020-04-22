@@ -1,0 +1,11 @@
+	set term svg size 640,480 background "white" font "times,14"
+	set out "plotB.svg"
+	set key right top
+    
+
+	set xlabel "E(GeV)"
+	set ylabel "Signal (arb. u.)"
+    set title "Signal from Higgs experiment"
+	plot "outB.txt" index 1 u 1:2:3 w errorbars t "Data" \
+    , "outB.txt" index 1 u 1:4 w l t "Fit"
+    

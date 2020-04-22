@@ -22,6 +22,8 @@ public vector(double a, double b, double c)
 	{ data = new double[]{a,b,c}; }
 public vector(double a, double b, double c, double d)
 	{ data = new double[]{a,b,c,d}; }
+public vector(double a, double b, double c, double d, double e, double f, double g, double h, double i, double j, double k, double l)
+	{ data = new double[]{a,b,c,d,e,f,g,h,i,j,k,l}; }
 
 public static implicit operator vector (double[] a){ return new vector(a); }
 public static implicit operator double[] (vector v){ return v.data; }
@@ -70,11 +72,12 @@ public double dot(vector o){
 
 public double norm(){
 	double meanabs=0;
-	for(int i=0;i<size;i++)meanabs+=this[i];
+	for(int i=0;i<size;i++)meanabs+=Abs(this[i]);
+	if(meanabs==0)meanabs=1;
 	meanabs/=size;
 	double sum=0;
 	for(int i=0;i<size;i++)sum+=(this[i]/meanabs)*(this[i]/meanabs);
-	return meanabs*sum;
+	return meanabs*Sqrt(sum);
 	}
 
 public vector copy(){
@@ -94,5 +97,21 @@ public bool approx(vector o){
 		if(!approx(this[i],o[i]))return false;
 	return true;
 	}
+
+public static double max(vector v){
+    double max = v[0];
+    for(int i=1;i<v.size;i++){
+        if (v[i]>max)
+            max = v[i];
+    }
+    return max; 
+}
+
+public static vector abs(vector v){
+    vector r = new vector(v.size);
+    for(int i=0;i<v.size;i++)r[i]=Abs(v[i]);
+    return r; 
+}
+
 
 }//vector

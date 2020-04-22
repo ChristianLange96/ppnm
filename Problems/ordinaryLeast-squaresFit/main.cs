@@ -37,7 +37,7 @@ class main{
 
         outB.WriteLine($"So lambda = {-c[1]:f5}, dlambda = {Sqrt(S[1,1]):f5}");
 
-        outB.WriteLine($"Half-life is = {Log(2)/c[1]:f1} pm {Log(2)/Pow(c[1],2) * Sqrt(S[1,1]):f1}");
+        outB.WriteLine($"Half-life is = {Log(2)/c[1]:f1} pm {Log(2)/Pow(c[1],2) * Sqrt(S[1,1]):f1} days");
 
 
         // Sending data to output
@@ -51,14 +51,18 @@ class main{
         double a = t[0], b  = t[t.size-1];
         var resy = new vector(n);
         var rest = new vector(n);
-        var resyPlus = new vector(n);
-        var resyMinus = new vector(n);
+        var resyC0Plus = new vector(n);
+        var resyC0Minus = new vector(n);
+        var resyC1Plus = new vector(n);
+        var resyC1Minus = new vector(n);
         for(int i = 0; i < n; i++){
             rest[i] = a + i * b/n;
             resy[i] = Exp(c[0] + c[1] * rest[i]); // Exponentiating
-            resyPlus[i] = Exp(c[0]+Sqrt(S[0,0]) + (c[1]+Sqrt(S[1,1])) * rest[i]);
-            resyMinus[i] = Exp(c[0]-Sqrt(S[0,0]) + (c[1]-Sqrt(S[1,1])) * rest[i]);
-            outFitData.WriteLine("{0} {1} {2} {3}", rest[i], resy[i], resyPlus[i], resyMinus[i]);
+            resyC0Plus[i]  = Exp(c[0]+Sqrt(S[0,0]) + (c[1] * rest[i])); // c0 + dc0
+            resyC0Minus[i] = Exp(c[0]-Sqrt(S[0,0]) + (c[1] * rest[i])); // c0 - dc0
+            resyC1Plus[i]  = Exp(c[0] + (c[1] + S[1,1]) * rest[i]);     // c1 + dc1
+            resyC1Minus[i] = Exp(c[0] + (c[1] - S[1,1]) * rest[i]);     // c1 - dc1
+            outFitData.WriteLine("{0} {1} {2} {3} {4} {5}", rest[i], resy[i], resyC0Plus[i], resyC0Minus[i], resyC1Plus[i], resyC1Minus[i]);
         }
         outData.Close();
         outFitData.Close();
