@@ -7,5 +7,5 @@
 	set ylabel "Signal (arb. u.)"
     set title "Signal from Higgs experiment"
 	plot "outB.txt" index 1 u 1:2:3 w errorbars t "Data" \
-    , "outB.txt" index 1 u 1:4 w l t "Fit"
+    , "outB.txt" index 2 u 1:2 w l t "Fit"
     

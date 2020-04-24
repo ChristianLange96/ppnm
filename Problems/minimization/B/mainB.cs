@@ -24,11 +24,7 @@ public class mainB{
         return A /(Pow(e-m,2) + Pow(gam,2)/4.0);
     }
 
-
-
-
     public static int Main(){
-
         // Creating lists with data
         energy = new System.Collections.Generic.List<double>();
         signal = new System.Collections.Generic.List<double>();
@@ -67,8 +63,15 @@ public class mainB{
 
         // Writing data
         for(int i = 0; i < energy.Count; i++) {
-            WriteLine($" {energy[i]} {signal[i]} {error[i]} {BW(m, gam, A, energy[i])}");
+            WriteLine($"{energy[i]} {signal[i]} {error[i]}");
         }
+        WriteLine("");
+        WriteLine("");
+
+        for(double i = 101.0 ; i <= 159.0; i += 0.1){
+            WriteLine($"{i} {BW(m, gam, A, i)}");
+        }
+
         return 0;
     }
 }

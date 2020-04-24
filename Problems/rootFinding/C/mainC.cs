@@ -11,10 +11,6 @@ public class mainC{
         StreamWriter outC2data = new StreamWriter("outC2.data", append:false);
         // Looking solutions for which fe(rmax) = 0 is satisfied. 
 
-
-    
-
-
         for(double rmax = 2.0; rmax <= 10.0; rmax+=2.0){
             Func<vector, vector> fe_root = (vector m) => {
             double e = m[0];
@@ -26,7 +22,7 @@ public class mainC{
             vector mroots = newton(fe_root, m0);
             // Obtaining the energy satisfying the boundary condition 
             double e_found = mroots[0];
-                for(double i = 0.0; i <= rmax + 0.01; i += 0.10){  /// HVORFOR VIRKER DET IKKE UDEN +0.01?
+                for(double i = 0.0; i <= rmax + 0.01; i += 0.10){  
                     outC1data.WriteLine("{0} {1}", i, fe(e_found,i));
                 }
             outC1data.WriteLine(" ");
@@ -36,12 +32,12 @@ public class mainC{
             outC1data.WriteLine("{0} {1} ", i, i * Exp(-i));
         }
 
-        for(double rmax = 2.0; rmax <= 10.0; rmax+=2.0){
+        for(double rmax = 0.5; rmax <= 10.0; rmax+=2.0){
             Func<vector, vector> fe_root = (vector m) => {
             double e = m[0];
             double fe_rmax = fe(e, rmax);
             double k= Sqrt(- 2 * e);
-            return new vector(fe_rmax - - rmax * Exp(- k * rmax));
+            return new vector(fe_rmax - rmax * Exp(- k * rmax));
             }; 
             // Initial condition
             vector m0 = new vector(-1.0);   // I know the root is around -0.5.
@@ -49,8 +45,7 @@ public class mainC{
 
             // Obtaining the energy satisfying the boundary condition 
             double e_found = mroots[0];
-            Console.Error.WriteLine($"e_found = {e_found}");
-                for(double i = 0.0; i <= rmax + 0.01; i += 0.10){  /// HVORFOR VIRKER DET IKKE UDEN +0.01?
+                for(double i = 0.0; i <= rmax + 0.01; i += 0.10){ 
                     outC2data.WriteLine("{0} {1}", i, fe(e_found,i));
                 }
             outC2data.WriteLine(" ");
