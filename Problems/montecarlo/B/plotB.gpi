@@ -1,0 +1,9 @@
+	set term svg size 640,480 background "white" font "times,14"
+	set out "plotB.svg"
+	set key right top
+    
+
+	set xlabel "1/√N"
+	set ylabel "Est. Error."
+    set title "Error est. of plain Monte-Carlo integration (supposed to be linear)"
+	plot "outB.txt" u 1:2 title "Obtained data" 

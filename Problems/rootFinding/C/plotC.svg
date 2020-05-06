@@ -171,7 +171,7 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(148,   0, 211)'  d='M206.4,84.1 L255.7,84.1 M93.7,412.8 L95.7,333.8 L97.6,270.4 L99.6,220.9 L101.6,183.7 L103.6,157.4
 		L105.5,140.7 L107.5,132.4 L109.5,131.4 L111.4,136.7 L113.4,147.5 L115.4,162.9 L117.4,182.3 L119.3,204.9
-		L121.3,230.1 L123.3,257.6 L125.2,286.7 L127.2,317.1 L129.2,348.3 L131.1,380.1  '/></g>
+		L121.3,230.1 L123.3,257.6 L125.2,286.7 L127.2,317.1 L129.2,348.3 L131.1,380.1 L133.1,412.2  '/></g>
 	</g>
 	<g id="gnuplot_plot_2a" ><title>rmax = 4</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -185,7 +185,7 @@
 		L121.3,116.8 L123.3,127.0 L125.2,138.3 L127.2,150.3 L129.2,162.9 L131.1,175.8 L133.1,189.0 L135.1,202.2
 		L137.1,215.4 L139.0,228.5 L141.0,241.5 L143.0,254.1 L144.9,266.6 L146.9,278.7 L148.9,290.6 L150.9,302.1
 		L152.8,313.3 L154.8,324.2 L156.8,334.9 L158.7,345.3 L160.7,355.4 L162.7,365.3 L164.7,375.1 L166.6,384.6
-		L168.6,394.1 L170.6,403.5  '/></g>
+		L168.6,394.1 L170.6,403.5 L172.5,412.8  '/></g>
 	</g>
 	<g id="gnuplot_plot_3a" ><title>rmax = 6</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
