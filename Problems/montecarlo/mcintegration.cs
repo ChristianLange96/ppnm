@@ -108,14 +108,19 @@ public class montecarlo{
             // From these points est. the variances in each subdivision
             vector res_stats1 = stats(vol1);
             vector res_stats2 = stats(vol2);
-            if(res_stats1[1] >= var_max){
-                var_max = res_stats1[1];
+            double v = Abs(res_stats1[0] - res_stats2[0]);
+            if (v > var_max){
+                var_max = v;
                 dim_max = i;
             }
-            if (res_stats2[1] >= var_max){
-                var_max = res_stats2[1];
-                dim_max = i;                
-            }
+            // if(res_stats1[1] >= var_max){
+            //     var_max = res_stats1[1];
+            //     dim_max = i;
+            // }
+            // if (res_stats2[1] >= var_max){
+            //     var_max = res_stats2[1];
+            //     dim_max = i;                
+            // }
         }
         // Now the dimension with the largest variance is divided into two and called recursively
         vector a2 = a.copy();
