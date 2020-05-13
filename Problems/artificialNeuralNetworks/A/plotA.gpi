@@ -1,0 +1,10 @@
+	set term svg size 640,480 background "white" font "times,14"
+	set out "plotA.svg"
+	set key right top
+    
+
+	set xlabel "x"
+	set ylabel "f(x)"
+    set title "f(x) = Sin(x)"
+	plot "outA.txt" index 0 u 1:2 title "Tabulated points" \
+    , "outA.txt" index 1 u 1:2 w l title "Interpolated line" 

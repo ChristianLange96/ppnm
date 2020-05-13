@@ -28,11 +28,18 @@ public vector(double a, double b, double c, double d, double e, double f, double
 public static implicit operator vector (double[] a){ return new vector(a); }
 public static implicit operator double[] (vector v){ return v.data; }
 
+public void eprint(string s=""){ // For debugging
+	System.Console.Error.Write(s);
+	for(int i=0;i<size;i++) System.Console.Error.Write("{0:f3} ",this[i]);
+	System.Console.Error.Write("\n");
+}
+
 public void print(string s=""){
 	System.Console.Write(s);
 	for(int i=0;i<size;i++) System.Console.Write("{0:f3} ",this[i]);
 	System.Console.Write("\n");
 }
+
 
 public void print(int n, string s=""){		// Only prints n first values
 	System.Console.Write(s);

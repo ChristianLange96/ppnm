@@ -1,5 +1,5 @@
 	set term svg size 640,480 background "white" font "times,14"
-	set out "plotB.svg"
+	set out "plotA.svg"
 	set key right top
     
 

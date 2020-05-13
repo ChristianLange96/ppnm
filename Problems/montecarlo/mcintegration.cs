@@ -103,7 +103,7 @@ public class montecarlo{
             // Looping over all points to split them into two
             for(int j = 0; j < N; j++){
                 if(xs[i,j] <= splitter){vol1.Add(fxs[j]);}
-                else {vol2.Add(fxs[i]);}
+                else {vol2.Add(fxs[j]);}
             }
             // From these points est. the variances in each subdivision
             vector res_stats1 = stats(vol1);
@@ -132,12 +132,4 @@ public class montecarlo{
 
         return new vector(avg1 + avg2, Sqrt(err1 * err1 + err2 * err2));
     }
-
-
-
-
-
-
-
-
 } 
