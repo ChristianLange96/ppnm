@@ -1,5 +1,5 @@
 	set term svg size 640,480 background "white" font "times,14"
-	set out "plot_times.svg"
+	set out "Plot_times.svg"
 	set key bottom right
 	set title "Time to find eigenvalues as function of matrix size n"
 	set xlabel "n^2 (matrix size squared)"

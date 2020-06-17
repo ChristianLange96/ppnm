@@ -16,7 +16,7 @@ public class mainB{
 
         // Part B1 - O(n^3) dependence
 
-        for(int n = 20; n < 161; n+= 20 ){
+        for(int n = 20; n < 221; n+= 20 ){
 
             var Arnd = jac_diag.makeRnmSymMatrix(n);
             matrix V = new matrix(n,n);

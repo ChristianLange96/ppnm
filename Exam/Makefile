@@ -1,12 +1,12 @@
-all: eigenvalues.txt plot_times.svg
+all: Eigenvalues.txt Plot_times.svg
 
-plot_times.svg : plot_times.gpi out_times.data
+Plot_times.svg : plot_times.gpi out_times.data
 	gnuplot $<
 	
 out_times.data : main_time.exe
 	mono $< >$@
 
-eigenvalues.txt : main_eigen.exe
+Eigenvalues.txt : main_eigen.exe
 	mono $< >$@
 
 main_time.exe : main_time.cs matlib.dll

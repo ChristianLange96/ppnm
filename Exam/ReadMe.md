@@ -12,14 +12,15 @@ Comments:
     This could also have been done with all lambdas at a time, but this is not as time efficient nor as stable.
 
 The files of interest are the following:
-    eigenvalues.txt:    This file shows that I create a matrix(n,n) on the form:
+
+    Eigenvalues.txt:    This file shows that I create a matrix(n,n) on the form:
                         A = D + u * u^T, where D is a diagonal matrix and u is a a vector.
                         The I calculate the eigenvalues by using the symmetric update 
                         and compare it with the eigenvalues found by our previously implemented routine. I have also implemented special cases: One where some elements
                         in u are zero, and one where all elements
                         in u are zero. These speed up the calculations for big matrices.
 
-    plot_times.svg:     Here I plot the time it takes to find the eigenvalues as function
+    Plot_times.svg:     Here I plot the time it takes to find the eigenvalues as function
                         of matrix size n. This is fitted with the routine from gnuplot and
                         we see a good agreement.
                         It should me noted that the time can fluctuate depending on the matrix.
