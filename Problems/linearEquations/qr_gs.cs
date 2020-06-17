@@ -36,7 +36,25 @@ public class qr_gs{
         return B;
     }
 
+    public static matrix get_random_matrix(int n, int m){
+        var rand = new Random();
+        matrix A = new matrix(n, m);
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                A[i,j] = 2 + 5 * rand.NextDouble();
+            }
+        }
+    return A;
+    }
 
+    public static vector get_random_vector(int n){
+        var rand = new Random();
+        vector b = new vector(n);
 
+        for(int i = 0; i < n; i++){
+            b[i] = 1 + 4 * rand.NextDouble();
+        }
+    return b;
+    }
 
 }

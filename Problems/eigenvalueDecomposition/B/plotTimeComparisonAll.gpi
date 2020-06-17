@@ -1,0 +1,9 @@
+	set term svg size 640,480 background "white" font "times,14"
+	set out "PlotTimeComparisonAll.svg"
+	set key right
+	set title "For B3: Comparing no. of operations"
+	set xlabel "n (size of quadratic matrix)"
+	set ylabel "Time(s)"
+	plot "outB_rotations.data" u 1:4 t "Cyclic" \
+	, "outB_rotations.data" u 1:5 t "Val. by val. lowest" \
+    , "outB_rotations_all.data" u 1:4 t "Val. by val. all"

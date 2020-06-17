@@ -6,26 +6,27 @@ using static vector;
 using static minimizer;
 
 public partial class interpolater_ann {
-        int n;
-        Func<double,double> f;
-        vector p;
-        Random rand = new Random();
-        int ncalls;
-        public static double erf(double x){ // To integration of Gaussian
-        /// single precision error function (Abramowitz and Stegun, from Wikipedia)
-        if(x<0) return -erf(-x);
-        double[] a={0.254829592,-0.284496736,1.421413741,-1.453152027,1.061405429};
-        double t=1/(1+0.3275911*x);
-        double sum=t*(a[0]+t*(a[1]+t*(a[2]+t*(a[3]+t*a[4]))));/* the right thing */
-        return 1.0 - sum*Exp(-x*x);
-        } 
+    Func<double,double> f;
+    Func<double,double> fm;
+    Func<double,double> fmm;
+    Func<double,double> fi;
+    int n;
+    vector p;
+    Random rand = new Random();
+    int ncalls;
+    
+    private void init (int n){
+    ncalls = 0;
+    f = (x) =>  x * Exp(-x * x);    // Activation function
+    fm = (x) => Exp(-x * x) - 2 * x * x * Exp(-x * x);  // Deriv og f
+    fmm = (x) => - 2 * x * Exp(-x * x) -4 * x * Exp(-x * x) + 4 * x * x * x * Exp(-x * x); // Double deriv of f
+    fi = (x) => -Exp(-x * x)/2;    // Integral of f
+    p = new vector(3 * n);
+    }
 
-
-    public interpolater_ann(){
-        ncalls = 0;
-        n = 3;                  // No. of neurons
-        f = (x) =>  Exp(-x * x);
-        p = new vector(3 * n);
+    public interpolater_ann(int m){
+        init(m);
+        n = m;        
         for(int i = 0; i < 3 * n; i++){
             // Creating random numbers from normal distribution - found online
             double u1 = 1.0 - rand.NextDouble(); 
@@ -37,7 +38,10 @@ public partial class interpolater_ann {
 	public double feedforward(double x){
         double y = 0;
         for(int i = 0; i < n; i++){
-            y += p[i*3 + 2] * f((x - p[i*3]) / p[i*3 + 1]);
+            double ai = p[3 * i + 0];
+            double bi = p[3 * i + 1];
+            double wi = p[3 * i + 2];
+            y += wi * f((x-ai)/bi);
         }
         //Error.WriteLine($"Feedfoward has been called");
         return y;
@@ -58,8 +62,8 @@ public partial class interpolater_ann {
         vector pa = p.copy();
         int ncounts = qnewton_min(delta_p, ref pa, 1e-8);
         p = pa;
-        //Error.WriteLine($"res1 = {res1}");
-        double threshhold = 5.0;
+        Error.WriteLine($"res1 = {res1}"); 
+        double threshhold = 0.01; 
         if(res1 > threshhold){
             ncalls++;
             Error.WriteLine($"Costfunction did not meat criteria, costfun = {res1}, threshold =  {threshhold}."); 
@@ -80,18 +84,23 @@ public partial class interpolater_ann {
     public double deriv(double x){  // Returns the derivative at x.
         double res = 0;
         for(int i = 0; i < n; i++){
-            res += p[3*i+2] * f((x- p[3*i])/p[3*i+1]) * (-2.0/(Pow(p[3*i+1], 2)) *(x-p[3*i]));
+            double ai = p[3 * i + 0];
+            double bi = p[3 * i + 1];
+            double wi = p[3 * i + 2];
+            res += wi * fm((x-ai)/bi)/bi;
         }
         return res;
     } // deriv
 
-    public double integral(double x){
-        double res1 = 0;
-        double res2 = 0;
+    public double integral(double x, double a){ // Integral from a to x
+        double res = 0;
         for(int i = 0; i < n; i++){
-        res1 += p[3*1+2] *  1/Sqrt(PI) * erf((- p[3*i])/p[3*i+1]);  
-        res2 += p[3*1+2] *  1/Sqrt(PI) * erf((x - p[3*i])/p[3*i+1]);
+            double ai = p[3 * i + 0];
+            double bi = p[3 * i + 1];
+            double wi = p[3 * i + 2];
+            res += wi * fi((x-ai)/bi) * bi; 
+            res -= wi * fi((a-ai)/bi) * bi;           
         }
-        return res2 - res1;
-    }
+        return res;
+    } // Integral
 }

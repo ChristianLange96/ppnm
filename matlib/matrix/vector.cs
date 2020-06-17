@@ -40,7 +40,6 @@ public void print(string s=""){
 	System.Console.Write("\n");
 }
 
-
 public void print(int n, string s=""){		// Only prints n first values
 	System.Console.Write(s);
 	for(int i=0;i<n;i++) System.Console.Write("{0:f3} ",this[i]);
@@ -113,6 +112,16 @@ public static double max(vector v){
     }
     return max; 
 }
+
+public static double min(vector v){
+    double min = v[0];
+    for(int i=1;i<v.size;i++){
+        if (v[i]< min)
+            min = v[i];
+    }
+    return min; 
+}
+
 
 public static vector abs(vector v){
     vector r = new vector(v.size);

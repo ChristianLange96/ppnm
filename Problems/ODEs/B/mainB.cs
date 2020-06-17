@@ -69,8 +69,8 @@ class mainB{
         outB3.Close();
 
         outB4.WriteLine("It's clearly seen on the figures, that the longer time it takes to infect a new person,");
-        outB4.WriteLine("the flatter the curve will be, but it will also take longer time for the epidemic to be over");
-
+        outB4.WriteLine("the flatter the curve will be, but it will also take longer time for the epidemic to be over.");
+        outB4.Close();
 
 
 

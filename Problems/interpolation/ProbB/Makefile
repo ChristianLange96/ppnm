@@ -8,13 +8,13 @@ out-xydata.txt out-qsplinedata.txt out-qintegration.txt out-qderivative.txt: mai
 	mono  $< >$@
 
 mainB.exe : mainB.cs matlib.dll
-	CSC $< -reference:matlib.dll
+	mcs $< -reference:matlib.dll
 
 LIBDIR = ../../../matlib
 SRC := $(LIBDIR)/matrix/vector.cs
 
 matlib.dll : $(SRC) qspline.cs
-	CSC $^ -target:library -out:$@
+	mcs $^ -target:library -out:$@
 
 clean:
 	-$(RM) out* *.txt *.exe *.dll *.svg

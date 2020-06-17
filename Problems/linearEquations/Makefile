@@ -1,6 +1,6 @@
-all: out.txt
+all: outAB.txt
 
-out.txt : main.exe
+outAB.txt : main.exe
 	mono $< >$@
 
 main.exe : main.cs matlib.dll qr_gs.cs 
@@ -10,7 +10,7 @@ LIBDIR = ../../matlib
 SRC := $(LIBDIR)/matrix
 
 matlib.dll : $(SRC)/matrix.cs $(SRC)/vector.cs qr_gs.cs
-	CSC $^ -target:library -out:$@
+	mcs $^ -target:library -out:$@
 
 clean:
-	-$(RM) out* *.txt *.exe *.dll *.svg
+	-$(RM) out* *.txt *.exe *.dll

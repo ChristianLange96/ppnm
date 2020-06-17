@@ -1,0 +1,25 @@
+Here is my solution for the exam.
+
+Student number: 201706578
+78 mod 22 = 12 -> I do exam problem nr. 12: 
+Symmetric rank-1 update of a size-n symmetric eigenvalue problem
+
+Comments:
+    I've tried to make comments in the code where it makes sense. 
+    Since the equations are independent w respect to the different eigenvalues, 
+    I've chosen to solve for one \lambda at a time,
+    as it is more time effective due to the nature of the rootfinding-routine. 
+    This could also have been done with all lambdas at a time, but this is not as time efficient nor as stable.
+
+The files of interest are the following:
+    eigenvalues.txt:    This file shows that I create a matrix(n,n) on the form:
+                        A = D + u * u^T, where D is a diagonal matrix and u is a a vector.
+                        The I calculate the eigenvalues by using the symmetric update 
+                        and compare it with the eigenvalues found by our previously implemented routine. I have also implemented special cases: One where some elements
+                        in u are zero, and one where all elements
+                        in u are zero. These speed up the calculations for big matrices.
+
+    plot_times.svg:     Here I plot the time it takes to find the eigenvalues as function
+                        of matrix size n. This is fitted with the routine from gnuplot and
+                        we see a good agreement.
+                        It should me noted that the time can fluctuate depending on the matrix.

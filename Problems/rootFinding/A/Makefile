@@ -6,7 +6,6 @@ outA.txt : mainA.exe
 mainA.exe : mainA.cs matlib.dll
 	mcs $< -reference:matlib.dll
 
-
 LIBDIR = ../../../matlib
 SRC := $(LIBDIR)/matrix
 

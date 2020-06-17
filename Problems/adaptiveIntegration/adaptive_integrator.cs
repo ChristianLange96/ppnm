@@ -20,7 +20,8 @@ public class adaptive_integrator{
     public static double integrator(Func<double,double> f, double a, double b, double acc, double eps){
         // Calculating f2 and f3
         double accError = 0;
-        return integrator(f, a, b, ref accError, acc, eps);
+        if(b <= a) {return -1.0 * integrator(f, b, a, ref accError, acc, eps);}
+        else {return integrator(f, a, b, ref accError, acc, eps);}
     }
 
 

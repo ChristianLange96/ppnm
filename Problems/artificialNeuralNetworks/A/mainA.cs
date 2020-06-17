@@ -5,10 +5,10 @@ using System;
 
 public class mainA{
     public static int Main(){
-        interpolater_ann our_ann = new interpolater_ann();
+        interpolater_ann our_ann = new interpolater_ann(4);
 
         // Creating data from a Sin(x)
-        int n = 20;
+        int n = 30;
         double a = -PI;
         double b = PI;
         vector xs = new vector(n+1);

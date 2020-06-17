@@ -14,7 +14,7 @@ LIBDIR = ../../../matlib
 SRC := $(LIBDIR)/matrix/vector.cs
 
 matlib.dll : $(SRC) linspline.cs
-	CSC $^ -target:library -out:$@
+	mcs $^ -target:library -out:$@
 
 clean:
 	-$(RM) out* *.txt *.exe *.dll *.svg

@@ -61,8 +61,8 @@ public class montecarlo{
 
 
     public static vector stratmc(Func<vector, double> f, vector a, vector b, double acc = 1e-3, double eps = 1e-3, int N = 42){
+        N = 8 * a.size;
         // N is the number of points added in each recursive call before error est.
-        
         double V = 1; // Volume
         // Calculating total volume
         for(int i = 0; i < a.size; i++){
@@ -79,11 +79,11 @@ public class montecarlo{
 
         // Estimating avg and err
         vector currentstats = stats(fxs);
-        double avg = currentstats[0];
-        double err = currentstats[1];
+        double integ = currentstats[0] * V;
+        double sigma = currentstats[1] * V/Sqrt(N);
 
         // Check if acceptable
-        if( err < acc + eps * Abs(avg)) return new vector(avg, err);
+        if( sigma < acc + eps * Abs(integ)) return new vector(integ, sigma);
 
         // Vectors to keep track of avg and err in each subdiv
         vector avg_sub = new vector(2 * a.size);
@@ -113,15 +113,8 @@ public class montecarlo{
                 var_max = v;
                 dim_max = i;
             }
-            // if(res_stats1[1] >= var_max){
-            //     var_max = res_stats1[1];
-            //     dim_max = i;
-            // }
-            // if (res_stats2[1] >= var_max){
-            //     var_max = res_stats2[1];
-            //     dim_max = i;                
-            // }
         }
+  
         // Now the dimension with the largest variance is divided into two and called recursively
         vector a2 = a.copy();
         a2[dim_max] = (a[dim_max]+b[dim_max])/2.0;

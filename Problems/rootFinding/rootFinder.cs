@@ -31,12 +31,12 @@ public class rootFinder{
 
             // Finding right lambda until converged
             double lam = 1.0;
-            while(f(x + lam * DelX).norm() > (1 - lam/2) * f(x).norm() && lam >= 1.0/64 ){
+            while(f(x + lam * DelX).norm() > (1 - lam/(2 * 0.6)) * f(x).norm() && lam >= 1.0/64 ){
                 lam = lam/2;
             }
             x = x + lam * DelX;
             // Stop if converged, otherwise continue for udpated x
-        } while(f(x).norm() > epsilon && max(abs(DelX)) > dx);
+            } while(f(x).norm() > epsilon && max(abs(DelX)) > dx);
         return x;
     } 
 }

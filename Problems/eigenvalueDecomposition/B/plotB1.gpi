@@ -1,0 +1,15 @@
+	set term svg size 640,480 background "white" font "times,14"
+	set out "Plot_O3Dependence.svg"
+	set key left
+	set fit quiet
+	set title "Time for diaganolization of (n x n) matrix"
+	set xlabel "n (Quadratic matrix size)"
+	set ylabel "t (s)"
+	a = 1
+	b = 1
+	c = 1
+	d = 1
+	f(x) = a * x*x*x + b*x*x + c*x +d
+	fit f(x) "outB1.data" u 1:2 via a,b,c,d
+	plot "outB1.data" u 1:2 t "Cyclic sweep" w points ls 5 lc rgb 'red' \
+	, f(x) t "Fit for O(n^3)"

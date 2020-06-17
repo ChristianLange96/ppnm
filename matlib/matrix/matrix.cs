@@ -189,7 +189,7 @@ public static void scale(matrix M,double x){
 		M[i,j]*=x;
 	}
 
-public void print(string s="",string format="{0,10:g3} "){
+public void print(string s="",string format="{0,10:f3} "){
 	System.Console.WriteLine(s);
 	for(int ir=0;ir<this.size1;ir++){
 	for(int ic=0;ic<this.size2;ic++)
