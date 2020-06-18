@@ -18,7 +18,7 @@ public class mainC{
         int k = 50;
         for(int i = 0; i <= k; i++){
             double thisx = a + i * (b-a)/k;
-            WriteLine($"{thisx} {Sin(thisx)} {our_ann.feedforward(thisx)} {our_ann.deriv(thisx)} {our_ann.double_deriv(thisx)}");
+            WriteLine($"{thisx} {Sin(thisx)} {our_ann.feedforward(thisx)} {our_ann.deriv(thisx)} {our_ann.double_deriv(thisx)} {Cos(thisx)} {-Sin(thisx)}");
         }
         return 0;
     }

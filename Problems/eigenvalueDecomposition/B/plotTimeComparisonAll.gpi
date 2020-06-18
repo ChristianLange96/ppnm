@@ -4,6 +4,6 @@
 	set title "For B3: Comparing no. of operations"
 	set xlabel "n (size of quadratic matrix)"
 	set ylabel "Time(s)"
-	plot "outB_rotations.data" u 1:4 t "Cyclic" \
-	, "outB_rotations.data" u 1:5 t "Val. by val. lowest" \
-    , "outB_rotations_all.data" u 1:4 t "Val. by val. all"
+	plot "outB_rotations.data" u 1:4 w l t "Cyclic" \
+	, "outB_rotations.data" u 1:5 w l t "Val. by val. lowest" \
+    , "outB_rotations_all.data" u 1:4 w l t "Val. by val. all"

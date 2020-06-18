@@ -1,15 +1,15 @@
-all: plotB1.svg plotB2.svg plotB3.svg outB4.txt
+all: PlotB1.svg PlotB2.svg PlotB3.svg OutB4.txt
 
-plotB1.svg : plotB1.gpi outB1.data
+PlotB1.svg : plotB1.gpi outB1.data
 	gnuplot plotB1.gpi
 
-plotB2.svg : plotB2.gpi outB2.data
+PlotB2.svg : plotB2.gpi outB2.data
 	gnuplot plotB2.gpi
 
-plotB3.svg : plotB3.gpi outB3.data
+PlotB3.svg : plotB3.gpi outB3.data
 	gnuplot plotB3.gpi
 
-outB1.data outB2.data outB3.data outB4.txt : mainB.exe
+outB1.data outB2.data outB3.data OutB4.txt : mainB.exe
 	mono mainB.exe
 
 mainB.exe : mainB.cs matlib.dll

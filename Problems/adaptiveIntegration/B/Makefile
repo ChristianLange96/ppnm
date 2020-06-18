@@ -11,4 +11,4 @@ matlib.dll : $(SRC)/matrix.cs $(SRC)/vector.cs ../adaptive_integrator.cs $(LIBDI
 	mcs $^ -target:library -out:$@
 
 clean:
-	-$(RM) out* *.txt *.exe *.dll *.svg
+	-$(RM) out* *.txt *.exe *.dll

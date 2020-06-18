@@ -1,15 +1,15 @@
-all: outA1.txt plotA2.svg 
+all: OutA1.txt PlotA2.svg Energies.txt
 
-plotA2.svg : outA2.data plotA2.gpi 
+PlotA2.svg : outA2.data plotA2.gpi 
 	gnuplot plotA2.gpi
 
 mainA2.exe : mainA2.cs matlib.dll
 	mcs $< -reference:matlib.dll
 
-outA2.data energies.txt : mainA2.exe
+outA2.data Energies.txt : mainA2.exe
 	mono $< >$@
 
-outA1.txt : mainA1.exe
+OutA1.txt : mainA1.exe
 	mono $< >$@
 
 mainA1.exe : mainA1.cs matlib.dll

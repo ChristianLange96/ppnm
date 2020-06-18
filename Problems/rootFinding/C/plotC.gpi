@@ -1,5 +1,5 @@
 	set term svg size 640,480 background "white" font "times,14"
-	set out "plotC.svg"
+	set out "PlotC.svg"
 	set key center top
     set multiplot layout 1,2
 

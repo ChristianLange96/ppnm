@@ -1,6 +1,6 @@
-all:plotC.svg
+all : PlotC.svg
 
-plotC.svg : plotC.gpi outC.txt
+PlotC.svg : plotC.gpi outC.txt
 	gnuplot plotC.gpi
 
 outC.txt : mainC.exe

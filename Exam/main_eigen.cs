@@ -68,15 +68,12 @@ public class main_eigen{
         WriteLine("");
         D4.print("D = ");
         matrix A4 = D4 + outer(u4,u4);
-        WriteLine("");
-        A4.print("Matrix A is then = ");
-        matrix M4 = A4.copy();
         vector d4 = new vector(n);
         matrix v4 = new matrix(n,n);
         vector eigens4 = symm_update(D4,u4);
         WriteLine("");
         eigens4.print("Eigenvalues are =                     ");
-        int sweeps4 = cyclic_sweep(M4,v4,d4 );
+        int sweeps4 = cyclic_sweep(A4,v4,d4 );
         sweeps4++; // Removes warning
         d4.print("Eigenvalues found with cyclic sweep = ");
 

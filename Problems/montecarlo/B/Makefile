@@ -1,6 +1,6 @@
-all: plotB.svg
+all: PlotB.svg
 
-plotB.svg : outB.txt plotB.gpi
+PlotB.svg : outB.txt plotB.gpi
 	gnuplot plotB.gpi
 
 outB.txt : mainB.exe

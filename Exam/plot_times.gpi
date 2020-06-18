@@ -1,14 +1,14 @@
 	set term svg size 640,480 background "white" font "times,14"
 	set out "Plot_times.svg"
-	set key bottom right
+	set key top right
 	set title "Time to find eigenvalues as function of matrix size n"
-	set xlabel "n^2 (matrix size squared)"
+	set xlabel "n (matrix size)"
 	set ylabel "time to find eigenvalues (ms)"
-	b = 14
-	a = 0.1
-	f(x) = b +  a *  x
+
+	a = 2
+	f(x) = a * x * x  
 	set fit quiet
-	fit f(x) "out_times.data" via a,b
-	plot "out_times.data" u 1:2 w l t "Data" \
-	, f(x) t sprintf ("Fit: f(n) = a*x+b, a = {%.4f}, b = {%.4f}",a,b) 
+	fit f(x) "out_times.data" via a
+	plot "out_times.data" u 1:2 w points ls 3 lc rgb 'red' t "Data" \
+	, f(x) t sprintf ("Fit: f(n) = a * n^2, a = {%f5}", a) 
 	

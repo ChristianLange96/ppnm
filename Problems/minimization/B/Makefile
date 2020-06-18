@@ -1,9 +1,9 @@
-all:plotB.svg
+all: PlotB.svg
 
-plotB.svg : outB.txt plotB.gpi
+PlotB.svg : OutB.txt plotB.gpi
 	gnuplot plotB.gpi
 
-outB.txt : mainB.exe
+OutB.txt : mainB.exe
 	mono $< >$@
 
 mainB.exe : mainB.cs matlib.dll

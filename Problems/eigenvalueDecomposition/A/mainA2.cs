@@ -5,7 +5,7 @@ using System.IO;
 
 public class mainA2{
     public static int Main(){
-        StreamWriter eigenenergies = new StreamWriter("energies.txt", append:false);
+        StreamWriter eigenenergies = new StreamWriter("Energies.txt", append:false);
         StreamWriter outData = new StreamWriter("outA2.data", append:false);
         int n = 99;
         double s=1.0/(n+1);

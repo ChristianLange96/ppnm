@@ -1,6 +1,6 @@
-all:outA.txt
+all: OutA.txt
 
-outA.txt : mainA.exe
+OutA.txt : mainA.exe
 	mono $< >$@
 
 mainA.exe : mainA.cs matlib.dll

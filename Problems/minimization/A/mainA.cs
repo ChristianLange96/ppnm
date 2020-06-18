@@ -14,6 +14,7 @@ public class mainA{
         WriteLine($"nsteps = {ncounts1}");
         WriteLine($"Found minimum = ({x0[0]:f5}, {x0[1]:f5},)");
         WriteLine($"Exact minimum = (1,1)");
+        WriteLine($"Absolute deviation = {Abs(x0[0]-1.0)}, {Abs(x0[1]-1.0)}");
         WriteLine($"Tolerance for gradient = {eps}");
         WriteLine($"Gradient at minimum = {minimizer.gradient(f1,x0).norm():f8}");
 
@@ -26,7 +27,8 @@ public class mainA{
         int ncounts2 = qnewton_min(f2, ref x0, eps);
         WriteLine($"nsteps = {ncounts2}");
         WriteLine($"Found minimum = ({x0[0]:f5}, {x0[1]:f5})");
-        WriteLine($"Exact minimum = (-2.805118, 3, 131312)");
+        WriteLine($"Exact minimum = (-2.805118, 3.131312)");
+        WriteLine($"Absolute deviation = {Abs(x0[0]+2.805118)}, {Abs(x0[1]-3.131312)}");
         WriteLine($"Tolerance for gradient = {eps}");
         WriteLine($"Gradient at minimum = {minimizer.gradient(f2,x0).norm():f8}");
 

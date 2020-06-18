@@ -18,4 +18,4 @@ matlib.dll : $(SRC) cspline.cs
 	mcs $^ -target:library -out:$@
 
 clean:
-	-$(RM) .*data out* *.txt *.exe *.dll *.svg
+	-$(RM) .*data out* *.exe *.dll *.svg

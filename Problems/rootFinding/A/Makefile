@@ -1,6 +1,6 @@
-all:outA.txt
+all:OutA.txt
 
-outA.txt : mainA.exe
+OutA.txt : mainA.exe
 	mono $< >$@
 
 mainA.exe : mainA.cs matlib.dll
@@ -13,4 +13,4 @@ matlib.dll : $(SRC)/matrix.cs $(SRC)/vector.cs ../rootfinder.cs ../../linearEqua
 	mcs $^ -target:library -out:$@
 
 clean:
-	-$(RM) out* *.txt *.exe *.dll *.svg
+	-$(RM) out* *.txt *.exe *.dll

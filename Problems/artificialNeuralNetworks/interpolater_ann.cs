@@ -62,7 +62,7 @@ public partial class interpolater_ann {
         vector pa = p.copy();
         int ncounts = qnewton_min(delta_p, ref pa, 1e-8);
         p = pa;
-        Error.WriteLine($"res1 = {res1}"); 
+        //Error.WriteLine($"res1 = {res1}"); 
         double threshhold = 0.01; 
         if(res1 > threshhold){
             ncalls++;

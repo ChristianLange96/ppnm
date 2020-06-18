@@ -1,6 +1,6 @@
-all: outAB.txt
+all: OutAB.txt
 
-outAB.txt : main.exe
+OutAB.txt : main.exe
 	mono $< >$@
 
 main.exe : main.cs matlib.dll qr_gs.cs 

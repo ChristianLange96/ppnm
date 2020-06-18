@@ -8,7 +8,7 @@ using System;
 public class mainB{
     public static int Main(){
         StreamWriter outBdata = new StreamWriter("outB.data", append:false);
-        StreamWriter outBtxt = new StreamWriter("outB.txt", append:false);
+        StreamWriter outBtxt = new StreamWriter("OutB.txt", append:false);
         // Defining rmax
         double rmax = 10;
 
@@ -33,7 +33,10 @@ public class mainB{
         }
 
         vector e_found_vec = new vector(e_found);
+        outBtxt.WriteLine($"Accuracy goal: {1e-3}");
         outBtxt.WriteLine("Error at root = {0}.",fe_root(e_found_vec)[0]);
+        outBtxt.WriteLine("In 'outB.data' you will see the comparison between the calculated result (2nd column).");
+        outBtxt.WriteLine("And the excact result (3rd column).");
 
         outBdata.Close();
         outBtxt.Close();

@@ -25,7 +25,7 @@ class mainB{
         StreamWriter outB1 = new StreamWriter("outB1.data", append:false);
         StreamWriter outB2 = new StreamWriter("outB2.data", append:false);
         StreamWriter outB3 = new StreamWriter("outB3.data", append:false);
-        StreamWriter outB4 = new StreamWriter("outB3.txt", append:false);
+        StreamWriter outB4 = new StreamWriter("OutB4.txt", append:false);
 
         // Starting values: (Data found at: https://www.sst.dk/da/corona/tal-og-overvaagning)
         double N = 5.822e6;          // Population size of Denmark

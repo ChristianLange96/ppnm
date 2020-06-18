@@ -4,14 +4,14 @@ Calculating integral of 1/Sqrt(x) dx from 0 to 1 with Clenshaw-Curtis transforma
 The result is:                       1.99999201046432
 The analytical result is:            2
 Abs. difference:                     7.98953567748839E-06
-Spec. tolerace delta ++ acc*|Q|:     0.00299999201046432
+Spec. tolerace delta + acc*|Q|:      0.00299999201046432
 No. of calls:                        16
 
 Calculating integral of 1/Sqrt(x) dx from 0 to 1 without Clenshaw-Curtis transformation
 The result is:                       1.99996150007805
 The analytical result is:            2
 Abs. difference:                     3.84999219513738E-05
-Spec. tolerace delta ++ acc*|Q|:     0.00299996150007805
+Spec. tolerace delta + acc*|Q|:      0.00299996150007805
 No. of calls:                        8572
 
 Clearly the transformation drastically reduces the number of calls.
@@ -20,14 +20,14 @@ Calculating integral of ln(x)/Sqrt(x) dx from 0 to 1 with Clenshaw-Curtis transf
 The result is:                       -3.99987385646141
 The analytical result is:            -4
 Abs. difference:                     0.00012614353859286
-Spec. tolerace delta ++ acc*|Q|:     0.00499987385646141
+Spec. tolerace delta + acc*|Q|:      0.00499987385646141
 No. of calls:                        96
 
 Calculating integral of ln(x)/Sqrt(x) dx from 0 to 1 without Clenshaw-Curtis transformaiton
 The result is:                       -3.99991705899915
 The analytical result is:            -4
 Abs. difference:                     8.29410008478249E-05
-Spec. tolerace delta ++ acc*|Q|:     0.00499991705899915
+Spec. tolerace delta + acc*|Q|:      0.00499991705899915
 No. of calls:                        8604
 
 Clearly the transformation drastically reduces the number of calls.
@@ -36,14 +36,14 @@ Calculating integral of 4 * Sqrt(1-x^2) dx from 0 to 1 with Clenshaw-Curtis tran
 The result is:                       3.1415763864835
 The analytical result is:            3.14159265358979
 Abs. difference:                     1.62671062930997E-05
-Spec. tolerace delta ++ acc*|Q|:     0.0041415763864835
+Spec. tolerace delta + acc*|Q|:     0.0041415763864835
 No. of calls:                        44
 
 Calculating integral of 4 * Sqrt(1-x^2) dx from 0 to 1 without Clenshaw-Curtis transformaiton
 The result is:                       3.14183457802727
 The analytical result is:            3.14159265358979
 Abs. difference:                     0.000241924437474506
-Spec. tolerace delta ++ acc*|Q|:     0.00414183457802727
+Spec. tolerace delta + acc*|Q|:      0.00414183457802727
 No. of calls:                        28
 
 So the transformation get a numerical result closer to PI than without but also uses more recursive calls

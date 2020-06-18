@@ -1,6 +1,6 @@
-all: plotC.svg
+all: PlotC.svg
 
-plotC.svg : outC.data plotC.gpi
+PlotC.svg : outC.data plotC.gpi
 	gnuplot plotC.gpi
 
 outC.data : mainC.exe
@@ -16,4 +16,4 @@ matlib.dll : $(SRC)/matrix.cs $(SRC)/vector.cs ../ODE_integrator.cs
 	mcs $^ -target:library -out:$@
 
 clean:
-	-$(RM) out* *.txt *.exe *.dll *.svg
+	-$(RM) *.exe *.dll *.svg

@@ -16,9 +16,14 @@ main_eigen.exe : main_eigen.cs matlib.dll
 	mcs $< -reference:matlib.dll
 
 LIBDIR = ../matlib
-SRC := $(LIBDIR)/matrix
+SRC := $(LIBDIR)/matrix/matrix.cs
+SRC += $(LIBDIR)/matrix/vector.cs 
+SRC += ../Problems/eigenvalueDecomposition/jac_diag.cs
+SRC += ../Problems/rootFinding/rootFinder.cs
+SRC += ../Problems/linearEquations/qr_gs.cs
+SRC += symm_rank_one.cs
 
-matlib.dll : $(SRC)/matrix.cs $(SRC)/vector.cs ../Problems/eigenvalueDecomposition/jac_diag.cs Symm_RankOne.cs ../Problems/rootFinding/rootFinder.cs ../Problems/linearEquations/qr_gs.cs
+matlib.dll : $(SRC)
 	mcs $^ -target:library -out:$@
 
 clean:

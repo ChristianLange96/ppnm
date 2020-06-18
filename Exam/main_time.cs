@@ -17,7 +17,7 @@ public class main_time{
             vector eigens = symm_update(A, u);
             sw.Stop();
             eigens[0] = 0; // Removes warning
-            WriteLine("{0} {1}", n*n, sw.ElapsedMilliseconds);
+            WriteLine("{0} {1}", n, sw.ElapsedMilliseconds);
         } 
         return 0;
     }
