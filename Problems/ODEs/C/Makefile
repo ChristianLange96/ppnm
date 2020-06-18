@@ -16,4 +16,4 @@ matlib.dll : $(SRC)/matrix.cs $(SRC)/vector.cs ../ODE_integrator.cs
 	mcs $^ -target:library -out:$@
 
 clean:
-	-$(RM) *.exe *.dll *.svg
+	-$(RM) *.data *.exe *.dll *.svg
