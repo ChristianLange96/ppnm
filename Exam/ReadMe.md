@@ -5,7 +5,7 @@ Student number: 201706578
 Symmetric rank-1 update of a size-n symmetric eigenvalue problem
 
 Comments:
-    When comparing the exam question w. the 'eigen.pdf' I take \sigma = 0.
+    When comparing the exam question w. the 'eigen.pdf' I take \sigma = 1.
     I've tried to make comments in the code where it makes sense. 
     Since the equations are independent w respect to the different eigenvalues, 
     I've chosen to solve for one \lambda at a time,
@@ -16,7 +16,7 @@ The files of interest are the following:
 
     Eigenvalues.txt:    This file shows that I create a matrix(n,n) on the form:
                         A = D + u * u^T, where D is a diagonal matrix and u is a a vector.
-                        The I calculate the eigenvalues by using the symmetric update 
+                        Then I calculate the eigenvalues by using the symmetric update 
                         and compare it with the eigenvalues found by our previously implemented routine. 
                         I have also implemented special cases: One where some elements
                         in u are zero, and one where all elements
