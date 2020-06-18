@@ -4,8 +4,7 @@ Student number: 201706578
 78 mod 22 = 12 -> I do exam problem nr. 12: 
 Symmetric rank-1 update of a size-n symmetric eigenvalue problem
 
-Comments:
-    When comparing the exam question w. the 'eigen.pdf' I take \sigma = 1.
+Notes:
     I've tried to make comments in the code where it makes sense. 
     Since the equations are independent w respect to the different eigenvalues, 
     I've chosen to solve for one \lambda at a time,
@@ -15,12 +14,13 @@ Comments:
 The files of interest are the following:
 
     Eigenvalues.txt:    This file shows that I create a matrix(n,n) on the form:
-                        A = D + u * u^T, where D is a diagonal matrix and u is a a vector.
+                        A = D + sigma * u * u^T, where D is a diagonal matrix and u is a a vector.
                         Then I calculate the eigenvalues by using the symmetric update 
-                        and compare it with the eigenvalues found by our previously implemented routine. 
-                        I have also implemented special cases: One where some elements
-                        in u are zero, and one where all elements
-                        in u are zero. These speed up the calculations for big matrices.
+                        and compare it with the eigenvalues found by our previously implemented routine.
+                        I have also implemented special cases: One where sigma < 0,
+                        one where some elements in u are zero, 
+                        and one where all elements in u are zero. 
+                        These speed up the calculations for big matrices.
 
     Plot_times.svg:     Here I plot the time it takes to find the eigenvalues as function
                         of matrix size n. This is fitted with the routine from gnuplot and

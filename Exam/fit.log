@@ -1,7 +1,7 @@
 
 
 *******************************************************************************
-Thu Jun 18 14:47:41 2020
+Thu Jun 18 15:36:42 2020
 
 
 FIT:    data read from "out_times.data"
@@ -13,16 +13,16 @@ function used for fitting: f(x)
 	f(x) = a * x * x
 fitted parameters initialized with current variable values
 
-   4 1.5280574372e+03  -1.54e-08  1.49e+01    7.955152e-04
+   4 1.8579605207e+03  -1.26e-08  1.49e+01    8.224888e-04
 
 After 4 iterations the fit converged.
-final sum of squares of residuals : 1528.06
-rel. change during last iteration : -1.53561e-13
+final sum of squares of residuals : 1857.96
+rel. change during last iteration : -1.26294e-13
 
 degrees of freedom    (FIT_NDF)                        : 38
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 6.3413
-variance of residuals (reduced chisquare) = WSSR/ndf   : 40.212
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 6.9924
+variance of residuals (reduced chisquare) = WSSR/ndf   : 48.8937
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-a               = 0.000795515      +/- 1.359e-05    (1.708%)
+a               = 0.000822489      +/- 1.498e-05    (1.822%)

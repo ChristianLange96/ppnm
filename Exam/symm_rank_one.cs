@@ -4,21 +4,34 @@ using static rootFinder;
 
 public class Symm_RankOne{
 
-    public static vector symm_update(matrix D, vector u){
+    public static vector symm_update(matrix D, vector u, double sigma = 1.0){
+        // This function finds eigenvalues to the matrix:
+        // A = D + sigma * u*u^T
         // I take the elements as matrix/vector as a way to store them,
         // such that my root-finding routine is appropriate to use. 
-        //I assume D is a diagonal matrix.
-        // I take \sigma to be +1 as written in the assignment text compared to the PDF.
+        // I assume D is a diagonal matrix.
+        // I take \sigma to be one if nothing else is specified.
+
         int n = u.size;
         double [] res_array = new double[n]; // To save results.
 
         // Creating starting conditions
         vector lams = new vector(n);
+
+        if(sigma > 0){
         for(int i = 0; i < n-1; i++){
-            lams[i] = 0.3 * D[i,i] + 0.7 * D[i + 1 ,i + 1]; //This 'weighting' seemed to work the best.
+                lams[i] = 0.3 * D[i,i] + 0.7 * D[i + 1 ,i + 1]; //This 'weighting' seemed to work the best.
+            }
+            lams[n-1] = 0.3 * D[n-1, n-1] + 0.7 * (D[n-1, n-1] + sigma * u.dot(u));
         }
-        lams[n-1] = 0.3 * D[n-1, n-1] + 0.7 * (D[n-1, n-1] + u.dot(u));
-        
+
+        if(sigma < 0 ){
+            lams[0] = 0.5 * D[0, 0] + 0.5 * (D[0, 0] + sigma * u.dot(u));
+            for(int i = 1; i < n; i++){
+                lams[i] = 0.5 * D[i, i] + 0.5 * D[i-1, i-1];
+            }
+        }
+
         // Function to be zeroed. I take one at a time since the different eigenvalues 
         // are independent. This way is more efficient and stable, I've found. Also, 
         // it allows me to skip the elements where u is zero that should not be changed,
@@ -27,7 +40,7 @@ public class Symm_RankOne{
             vector res = new vector(1);
             res[0] = 1;
             for(int i = 0; i < n; i++){
-                res[0] += u[i]*u[i]/(D[i,i]-l[0]);
+                res[0] += sigma * u[i]*u[i]/(D[i,i]-l[0]);
             }
             return res;
         };
