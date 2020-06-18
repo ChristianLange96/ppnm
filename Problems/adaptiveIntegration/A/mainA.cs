@@ -34,8 +34,8 @@ public class mainA{
         Console.WriteLine("Calculating integral of 4* Sqrt(1-x^2) dx from 1 to 0");
         double res3 = integrator(g, 1, 0, delta, eps);
         Console.WriteLine($"The result is:                       {res3}");
-        Console.WriteLine($"The analytical result is             {PI}");
-        Console.WriteLine($"Abs. difference:                     {Abs(res3-PI)}");
+        Console.WriteLine($"The analytical result is             {-PI}");
+        Console.WriteLine($"Abs. difference:                     {Abs(res3+PI)}");
         Console.WriteLine($"Spec. tolerace delta + acc*|Q|       {delta+eps*Abs(res3)}");
         Console.WriteLine("");
         Console.WriteLine("The calculated integrals satisfy the accuracy conditions.");

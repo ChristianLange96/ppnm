@@ -14,8 +14,8 @@ Spec. tolerace delta + acc*|Q|       4.14159265769177E-06
 
 Calculating integral of 4* Sqrt(1-x^2) dx from 1 to 0
 The result is:                       -3.14159265769177
-The analytical result is             3.14159265358979
-Abs. difference:                     6.28318531128157
+The analytical result is             -3.14159265358979
+Abs. difference:                     4.10197920075461E-09
 Spec. tolerace delta + acc*|Q|       4.14159265769177E-06
 
 The calculated integrals satisfy the accuracy conditions.

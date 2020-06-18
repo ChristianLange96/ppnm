@@ -1,4 +1,4 @@
-outC.txt : mainC.exe
+OutC.txt : mainC.exe
 	mono $< >$@
 
 mainC.exe : mainC.cs matlib.dll

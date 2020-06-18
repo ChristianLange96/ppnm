@@ -17,7 +17,10 @@ public class mainA{
         double mean1 = res1[0];
         double err1  = res1[1];
         WriteLine("Integral of sin(x)*sin(y) from 0 to pi in both x and y:");
-        WriteLine($"res = {mean1:f5} with err. est. = {err1:f5}, analytical sol = {4:f5}, actural abs. error = {(mean1-4):f5}");
+        WriteLine($"res =               {mean1}");
+        WriteLine($"analytical sol =    {4.0}");
+        WriteLine($"with err. est. =    {err1}");
+        WriteLine($"actual abs. error = {Abs((mean1-4))}");
         WriteLine("");
 
         // Finding half volume of a sphere with integration
@@ -33,7 +36,11 @@ public class mainA{
         double err2  = res2[1];
 
         WriteLine($"Integral of ciricle w. radius r = {r:f5} [(3/2)^(1/3) = {Pow(3.0/2,1.0/3):f5}]. Calculating half volume of the corresponding sphere.");
-        WriteLine($"res = {mean2:f5}, err. est. = {err2:f5}, analytical res = {PI:f5}, actural abs. error = {(mean2-PI):f5}");
+        WriteLine($"res =               {mean2}");
+        WriteLine($"analytical sol =    {PI}");
+        WriteLine($"with err. est. =    {err2}");
+        WriteLine($"actual abs. error = {Abs((mean2-PI))}");
+        WriteLine("");
         WriteLine("");
 
 
@@ -46,7 +53,12 @@ public class mainA{
         double err3  = res3[1];
         WriteLine("Integral of (1/PI)^3 * 1/(1 - Cos(x) * Sin(y) * Cos(z))");
         double correct_res = 1.3932039296856768591842462603255;
-        WriteLine($"res = {mean3}, err. est. = {err3}, analytical res = {correct_res}, actural abs. error = {(mean3-correct_res):f5}");
+        WriteLine($"res =               {mean3}");
+        WriteLine($"analytical sol =    {correct_res}");
+        WriteLine($"with err. est. =    {err3}");
+        WriteLine($"actual abs. error = {Abs(mean3-correct_res)}");
+        WriteLine("");
+        WriteLine("The error est. is in general a little to conservative.");
 
         return 0;
     }

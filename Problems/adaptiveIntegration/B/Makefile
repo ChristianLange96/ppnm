@@ -1,4 +1,4 @@
-outB.txt : mainB.exe
+OutB.txt : mainB.exe
 	mono $< >$@
 
 mainB.exe : mainB.cs matlib.dll
