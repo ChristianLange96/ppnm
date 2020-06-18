@@ -60,8 +60,8 @@ public class montecarlo{
     }
 
 
-    public static vector stratmc(Func<vector, double> f, vector a, vector b, double acc = 1e-3, double eps = 1e-3, int N = 42){
-        N = 8 * a.size;
+    public static vector stratmc(Func<vector, double> f, vector a, vector b, double acc = 1e-3, double eps = 1e-3, int N = -1){
+        if(N==-1) {N = 64 * a.size;}
         // N is the number of points added in each recursive call before error est.
         double V = 1; // Volume
         // Calculating total volume
@@ -71,23 +71,40 @@ public class montecarlo{
 
         // Creating N points 
         vector fxs = new vector(N);
-        matrix xs = new matrix(a.size, N); 
         for(int i = 0; i < N; i++){
-            xs[i] = randomx(a,b);
-            fxs[i] = f(xs[i]);
+            fxs[i] = f(randomx(a,b));
         }
 
         // Estimating avg and err
         vector currentstats = stats(fxs);
-        double integ = currentstats[0] * V;
-        double sigma = currentstats[1] * V/Sqrt(N);
+        
+        vector res = strata(f, a, b, acc, eps, N, currentstats,V);
+
+        return new vector(res[0], res[1]);
+
+    }
+
+    public static vector strata(Func<vector, double> f, vector a, vector b, double acc, double eps, int N, vector oldstats, double V){
+        vector fxs = new vector(N);
+        matrix xs  = new matrix(a.size, N);
+        for(int i = 0; i < N; i++){
+            xs[i] = randomx(a,b);
+            fxs[i] = f(xs[i]);   
+        }
+        vector currentstats = stats(fxs);
+        double integ = V * (currentstats[0] * N + oldstats[0] * oldstats[2])/(N+oldstats[2]);
+        double sigma = V * Sqrt(currentstats[0] * currentstats[2] + oldstats[0] * oldstats[2])/(N + oldstats[2]);
+
+
 
         // Check if acceptable
-        if( sigma < acc + eps * Abs(integ)) return new vector(integ, sigma);
+        if( sigma < acc + eps * Abs(integ)) return new vector(integ, sigma, N + oldstats[2]);
 
         // Vectors to keep track of avg and err in each subdiv
-        vector avg_sub = new vector(2 * a.size);
-        vector err_sub = new vector(avg_sub.size);
+        vector oldL = new vector(3);
+        vector oldR = new vector(3);
+        vector currentL;
+        vector currentR;
         double var_max = -1.0;        // To keep track of the current maximal variance.
         int    dim_max = 0;           // Keep track of the dimension in which the largest variance. 
         List<double> vol1 = new List<double>();
@@ -106,12 +123,14 @@ public class montecarlo{
                 else {vol2.Add(fxs[j]);}
             }
             // From these points est. the variances in each subdivision
-            vector res_stats1 = stats(vol1);
-            vector res_stats2 = stats(vol2);
-            double v = Abs(res_stats1[0] - res_stats2[0]);
+            currentL = stats(vol1);
+            currentR = stats(vol2);
+            double v = Abs(currentL[0] - currentR[0]);
             if (v > var_max){
                 var_max = v;
                 dim_max = i;
+                oldL = currentL;
+                oldR = currentR;
             }
         }
   
@@ -121,12 +140,12 @@ public class montecarlo{
         vector b2 = b.copy();
         b2[dim_max] = (a[dim_max]+b[dim_max])/2.0;
 
-        vector res_subdiv1 = stratmc(f, a, b2, acc/Sqrt(2), eps, N);
-        vector res_subdiv2 = stratmc(f, a2, b, acc/Sqrt(2), eps, N);
-        double avg1 = res_subdiv1[0];
-        double err1 = res_subdiv1[1];
-        double avg2 = res_subdiv2[0];
-        double err2 = res_subdiv2[1];
+        vector resL = strata(f, a, b2, acc/Sqrt(2), eps, N, oldL, V/2.0);
+        vector resR = strata(f, a2, b, acc/Sqrt(2), eps, N, oldR, V/2.0);
+        double avg1 = resL[0];
+        double err1 = resL[1];
+        double avg2 = resR[0];
+        double err2 = resR[1];
 
         return new vector(avg1 + avg2, Sqrt(err1 * err1 + err2 * err2));
     }

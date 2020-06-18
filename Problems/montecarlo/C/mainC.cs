@@ -13,8 +13,9 @@ public class mainC{
         Func<vector,double> f1 = (v) => {ncalls++; return Sin(v[0]) * Sin(v[1]);};
         vector a1 = new vector(0,0);
         vector b1 = new vector(PI,PI);
-        double acc = 0.01;
-        vector res1 = stratmc(f1, a1, b1);
+        double acc = 1e-2;
+        double eps = 1e-2;
+        vector res1 = stratmc(f1, a1, b1, acc, eps);
         double mean1 = res1[0];
         double err1  = res1[1];
         WriteLine("Integral of sin(x)*sin(y) from 0 to pi in both x and y:");
@@ -34,7 +35,7 @@ public class mainC{
         };
         vector a2 = new vector(-r,-r);
         vector b2 = new vector(r,r);
-        vector res2 = stratmc(f2, a2, b2);
+        vector res2 = stratmc(f2, a2, b2, acc, eps);
         double mean2 = res2[0];
         double err2  = res2[1];
 
@@ -49,7 +50,7 @@ public class mainC{
         Func<vector,double> f3 = (v) => {return 1.0/Pow(PI,3) * 1.0/(1 - Cos(v[0]) * Sin(v[1]) * Cos(v[2]));};
         vector a3 = new vector(0, 0, 0);
         vector b3 = new vector(PI, PI, PI);
-        vector res3 = stratmc(f3, a3, b3);
+        vector res3 = stratmc(f3, a3, b3, acc, eps);
         double mean3 = res3[0];
         double err3  = res3[1];
         WriteLine("Integral of (1/PI)^3 * 1/(1 - Cos(x) * Sin(y) * Cos(z))");
