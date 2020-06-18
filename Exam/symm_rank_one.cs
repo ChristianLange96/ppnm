@@ -15,7 +15,7 @@ public class Symm_RankOne{
         // Creating starting conditions
         vector lams = new vector(n);
         for(int i = 0; i < n-1; i++){
-            lams[i] = 0.3 * D[i,i] + 0.7 *D[i + 1 ,i + 1]; //This 'weighting' seemed to work the best.
+            lams[i] = 0.3 * D[i,i] + 0.7 * D[i + 1 ,i + 1]; //This 'weighting' seemed to work the best.
         }
         lams[n-1] = 0.3 * D[n-1, n-1] + 0.7 * (D[n-1, n-1] + u.dot(u));
         

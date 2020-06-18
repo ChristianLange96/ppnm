@@ -24,5 +24,10 @@ The files of interest are the following:
 
     Plot_times.svg:     Here I plot the time it takes to find the eigenvalues as function
                         of matrix size n. This is fitted with the routine from gnuplot and
-                        we see a good agreement.
+                        we see a good agreement to O(n^2).
                         It should me noted that the time can fluctuate depending on the matrix.
+    
+    Plot_comparison.svg:This is a comparison between this Rank 1 update - method and the cyclic
+                        sweep - method. This is only done for matrices on the form:
+                        A = D + u*u^T, where D is a diagonal matrix. It is clearly seen that the
+                        Rank 1 update - method outperforms the cyclic sweep for these matrices.

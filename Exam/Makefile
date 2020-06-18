@@ -1,4 +1,7 @@
-all: Eigenvalues.txt Plot_times.svg
+all: Eigenvalues.txt Plot_times.svg Plot_comparison.svg
+
+Plot_comparison.svg : plot_comparison.gpi out_times.data
+	gnuplot $<
 
 Plot_times.svg : plot_times.gpi out_times.data
 	gnuplot $<
