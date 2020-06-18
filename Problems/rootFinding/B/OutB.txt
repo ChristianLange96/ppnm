@@ -1,0 +1,4 @@
+Accuracy goal: 0.001
+Error at root = 0.000485874197795356.
+In 'outB.data' you will see the comparison between the calculated result (2nd column).
+And the excact result (3rd column).

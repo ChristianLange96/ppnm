@@ -1,0 +1,17 @@
+Finding minumum of Rosenbrock's Valley function
+Starting point:    3.000 3.000 
+nsteps = 56
+Found minimum = (0.99992, 0.99983,)
+Exact minimum = (1,1)
+Absolute deviation = 8.38248741048542E-05, 0.000169539962299292
+Tolerance for gradient = 0.001
+Gradient at minimum = 0.00077337
+
+Finding minumum of the Himmelblau's function
+Starting point:    5.000 3.000 
+nsteps = 9
+Found minimum = (-2.80511, 3.13132)
+Exact minimum = (-2.805118, 3.131312)
+Absolute deviation = 8.69250664381482E-06, 5.87841304522385E-06
+Tolerance for gradient = 0.001
+Gradient at minimum = 0.00076297

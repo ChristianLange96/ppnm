@@ -1,0 +1,33 @@
+Part B1 and B5: Finding lowest largest eigenvalues:
+
+Finding 2 lowest eigenvalues
+Random symmetric matrix, A1:
+     0.772      0.905      0.123      0.630      0.015      0.650 
+     0.905      0.922      0.071      0.414      0.362      0.672 
+     0.123      0.071      0.148      0.782      0.786      0.741 
+     0.630      0.414      0.782      0.118      0.183      0.548 
+     0.015      0.362      0.786      0.183      0.411      0.800 
+     0.650      0.672      0.741      0.548      0.800      0.070 
+
+2 lowest eigenvalues found in 450 sweeps:
+-0.914 -0.780 
+Eigenvalues found by cyclic sweep
+-0.914 -0.780 
+Indeed a match
+
+Finding largest eigenvalues
+Random symmetric matrix, A2:
+     0.880      0.361      0.012      0.846      0.684      0.306 
+     0.361      0.980      0.110      0.003      0.055      0.546 
+     0.012      0.110      0.549      0.936      0.296      0.739 
+     0.846      0.003      0.936      0.860      0.338      0.253 
+     0.684      0.055      0.296      0.338      0.448      0.068 
+     0.306      0.546      0.739      0.253      0.068      0.973 
+Largest 2 eigenvalues found in 167 sweeps:
+2.748 1.281 
+
+Eigenvalues found with cyclic sweep:-0.679 0.085 0.240 1.017 1.281 2.748 
+Indeed the last 2 matches.
+
+To find the largest eigenvalues I've changed the argument in Atan2
+into (Apg, App - Aqq) 

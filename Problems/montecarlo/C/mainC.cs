@@ -13,7 +13,7 @@ public class mainC{
         Func<vector,double> f1 = (v) => {ncalls++; return Sin(v[0]) * Sin(v[1]);};
         vector a1 = new vector(0,0);
         vector b1 = new vector(PI,PI);
-        double acc = 0.01, eps = 0;
+        double acc = 0.01;
         vector res1 = stratmc(f1, a1, b1);
         double mean1 = res1[0];
         double err1  = res1[1];

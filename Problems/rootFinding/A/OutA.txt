@@ -1,0 +1,12 @@
+A)
+Finding roots for x^2 - 4
+Accuracy goal:       0.001
+Result:             2.000 
+Analytical solution is 2.000.
+Deviation from analytical = 7.9014304245284E-05
+
+Finding the minimum for Rosenbrock's valley function
+Accuracy goal:                0.001
+Result:                       1.000 1.000 
+Analytical res:               1.000 1.000 
+Deviation from analytical =   0.000 0.000 
