@@ -10,7 +10,7 @@ public class Symm_RankOne{
         // I take the elements as matrix/vector as a way to store them,
         // such that my root-finding routine is appropriate to use. 
         // I assume D is a diagonal matrix.
-        // I take \sigma to be one if nothing else is specified.
+        // I take \sigma to be 1 if nothing else is specified.
 
         int n = u.size;
         double [] res_array = new double[n]; // To save results.
@@ -45,10 +45,10 @@ public class Symm_RankOne{
             return res;
         };
 
-        // Looping over u. Keeping the corresponding elements in D if u[i] = 0, otherwise I 
+        // Looping over u. Keeping the corresponding elements in D if u[i] * sigma = 0, otherwise I 
         // find the eigenvalue
         for(int i = 0; i < n; i++){
-            if(u[i] == 0){
+            if(u[i] * sigma == 0){
                 res_array[i] = D[i,i]; // Element should not be changed if u[i] = 0. 
             }
             else{

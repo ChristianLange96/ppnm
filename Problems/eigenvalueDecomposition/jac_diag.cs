@@ -61,7 +61,6 @@ public class jac_diag{
                         }
 
                         // Finally the eigenvectors are updated
-
                         for(int i = 0; i < A.size1; i++){
                             double temp_p = V[i,p];
                             double temp_q = V[i,q];
