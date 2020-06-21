@@ -58,7 +58,7 @@ public class mainA{
         WriteLine($"with err. est. =    {err3}");
         WriteLine($"actual abs. error = {Abs(mean3-correct_res)}");
         WriteLine("");
-        WriteLine("The error est. is in general a little to conservative.");
+        WriteLine("The error est. is in general a little too conservative, but this can fluctuate from integral to integral.");
 
         return 0;
     }
